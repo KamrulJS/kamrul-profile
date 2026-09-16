@@ -7,12 +7,7 @@ export default function EducationSection() {
     degree: "BACHELOR OF SCIENCE IN TEXTILE ENGINEERING",
     institution: "University of Dhaka / NITER",
     year: "2018 — 2022",
-    cgpa: "CGPA 3.25 / 4.00",
-    highlights: [
-      "Completed Bachelor of Science degree at University of Dhaka / NITER (CGPA 3.25 / 4.00).",
-      "Applied structured engineering methodology and design analysis to web development and problem solving.",
-      "Developed robust skills in technical project management, analytical problem solving, and cross-functional team communication."
-    ]
+    cgpa: "CGPA 3.25 / 4.00"
   };
 
   const languages = [
@@ -63,18 +58,6 @@ export default function EducationSection() {
 
                 <div className="swiss-badge degree-result-badge">
                   ACADEMIC RESULT: <span className="result-highlight">{education.cgpa}</span>
-                </div>
-
-                <div>
-                  <span className="highlights-label">
-                    KEY ACADEMIC HIGHLIGHTS:
-                  </span>
-                  {education.highlights.map((hl, idx) => (
-                    <div key={idx} className="highlight-row">
-                      <span className="bullet-dot" />
-                      <span>{hl}</span>
-                    </div>
-                  ))}
                 </div>
               </div>
             </div>

@@ -98,14 +98,14 @@ export default function ExperienceSection() {
                   DELIVERABLES & KEY RESPONSIBILITIES:
                 </h4>
                 
-                <div>
+                <ul className="experience-bullet-list">
                   {exp.bullets.map((bullet, idx) => (
-                    <div key={idx} className="experience-bullet-item">
-                      <span className="bullet-dot" />
+                    <li key={idx} className="experience-bullet-item">
+                      <span className="bullet-square" />
                       <span>{bullet}</span>
-                    </div>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
 
               {/* Tech Stack Pills */}
