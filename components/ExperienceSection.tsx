@@ -59,31 +59,31 @@ export default function ExperienceSection() {
               
               {/* Top Role Header */}
               <div className="experience-role-header">
-                <div>
-                  <div className="experience-title-wrap">
-                    <h3>
-                      {exp.role}
-                    </h3>
-                    <span className="swiss-badge-red">
-                      {exp.type}
-                    </span>
-                  </div>
-
-                  <div className="experience-company-strip">
-                    <span className="company-name">
-                      <Building2 className="w-4 h-4" />
-                      <span>{exp.company}</span>
-                    </span>
-                    <span className="location-name">
-                      <MapPin className="w-4 h-4 text-[#111111]" />
-                      <span>{exp.location}</span>
-                    </span>
-                  </div>
+                <div className="experience-title-wrap">
+                  <h3>
+                    {exp.role}
+                  </h3>
+                  <span className="swiss-badge-red">
+                    {exp.type}
+                  </span>
                 </div>
 
-                <div className="swiss-badge bg-[#F4F4F0]">
-                  <Calendar className="w-4 h-4 mr-2 text-[#E63946] inline" />
-                  <span>{exp.period}</span>
+                <div className="experience-company-strip">
+                  <span className="company-name">
+                    <Building2 className="w-4 h-4" />
+                    <span>{exp.company}</span>
+                  </span>
+                  <span className="location-name">
+                    <MapPin className="w-4 h-4 text-[#111111]" />
+                    <span>{exp.location}</span>
+                  </span>
+                </div>
+
+                <div className="experience-date-wrap">
+                  <div className="swiss-badge bg-[#F4F4F0]">
+                    <Calendar className="w-4 h-4 mr-2 text-[#E63946] inline" />
+                    <span>{exp.period}</span>
+                  </div>
                 </div>
               </div>
 

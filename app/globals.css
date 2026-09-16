@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Swiss Retro Base Components */
 .swiss-card {
   background-color: #FFFFFF;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   box-shadow: 2px 2px 0px 0px #111111;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -57,14 +57,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .swiss-card-red {
   background-color: #FFFFFF;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   box-shadow: 4px 4px 0px 0px #E63946;
 }
 
 .swiss-nav {
   background-color: rgba(244, 244, 240, 0.95);
   backdrop-filter: blur(12px);
-  border-bottom: 2px solid #111111;
+  border-bottom: 1px solid #111111;
 }
 
 .swiss-grid-pattern {
@@ -92,20 +92,19 @@ h1, h2, h3, h4, h5, h6 {
 .swiss-badge-sm {
   color: #111111;
   background-color: #F4F4F0;
-  border: 1.5px solid #111111;
+  border: 1.5px solid #959595;
   align-items: center;
-  padding: 0.14rem 0.4rem;
+  padding: 1px 3px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 400;
   transition: all 0.15s ease;
   display: inline-flex;
-  box-shadow: 1.5px 1.5px 0px 0px #111111;
 }
 
 .swiss-badge-sm:hover {
-  background-color: #E63946;
-  color: #FFFFFF;
+  background-color: #F4F4F0;
+  color: #111111;
 }
 
 /* Section Header Badges */
@@ -131,7 +130,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   background-color: #111111;
   color: #FFFFFF;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   font-family: 'JetBrains Mono', monospace;
   font-size: 14px;
   font-weight: 700;
@@ -155,7 +154,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   background-color: #FFFFFF;
   color: #111111;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   font-family: 'JetBrains Mono', monospace;
   font-size: 14px;
   font-weight: 700;
@@ -185,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
 
 ::-webkit-scrollbar-track {
   background: #F4F4F0;
-  border-left: 2px solid #111111;
+  border-left: 1px solid #111111;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -288,7 +287,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   box-shadow: 2px 2px 0px 0px #E63946;
 }
 
@@ -382,7 +381,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .icon-btn-box {
   padding: 0.5rem;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   background-color: #FFFFFF;
   color: #111111;
   cursor: pointer;
@@ -407,7 +406,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .mobile-menu-header {
   padding-bottom: 0.75rem;
-  border-bottom: 2px solid #111111;
+  border-bottom: 1px solid #111111;
   margin-bottom: 1rem;
 }
 
@@ -419,7 +418,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .mobile-menu-item {
   padding: 0.625rem;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   background-color: #F4F4F0;
   font-size: 13.5px;
   font-family: 'JetBrains Mono', monospace;
@@ -628,8 +627,15 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 5rem;
   position: relative;
   background-color: #FFFFFF;
-  border-top: 2px solid #111111;
-  border-bottom: 2px solid #111111;
+  border-top: 1px solid #111111;
+  border-bottom: 1px solid #111111;
+}
+
+.metrics-banner-section {
+  padding-top: 3.5rem;
+  padding-bottom: 2rem;
+  background-color: #F4F4F0;
+  position: relative;
 }
 
 .metrics-grid {
@@ -652,10 +658,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .metric-card {
-  padding: 1.5rem;
   text-align: left;
   background-color: #FFFFFF;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 1.2rem;
+  display: flex;
   box-shadow: 2px 2px 0px 0px #111111;
 }
 
@@ -669,25 +679,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .metric-label {
-  font-size: 15px;
+  font-size: 13.5px;
   font-weight: 700;
   text-transform: uppercase;
   font-family: 'Space Grotesk', sans-serif;
   color: #111111;
+  line-height: 1.3;
 }
 
-.metric-detail {
-  font-size: 13.5px;
-  font-family: 'JetBrains Mono', monospace;
-  color: #4B5563;
-  margin-top: 0.25rem;
+.metric-tags-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 1.25rem;
 }
 
 .dossier-card {
   padding: 1.5rem;
   text-align: left;
   background-color: #FFFFFF;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   box-shadow: 2px 2px 0px 0px #111111;
 }
 
@@ -699,7 +710,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .dossier-header {
   padding-bottom: 1.25rem;
-  border-bottom: 2px solid #111111;
+  border-bottom: 1px solid #111111;
   margin-bottom: 1.75rem;
 }
 
@@ -726,18 +737,232 @@ h1, h2, h3, h4, h5, h6 {
   gap: 1rem;
   padding: 1rem;
   background-color: #F4F4F0;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
 }
 
 .dossier-icon-box {
   padding: 0.75rem;
   background-color: #FFFFFF;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   color: #E63946;
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Workflow Process Step Cards & Connector Lines */
+.workflow-wrap {
+  margin-bottom: 3.5rem;
+}
+
+.workflow-subtitle {
+  font-size: 15.5px;
+  font-family: 'JetBrains Mono', monospace;
+  color: #4B5563;
+  margin-top: 0.35rem;
+  margin-bottom: 2rem;
+}
+
+.workflow-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  position: relative;
+}
+
+@media (min-width: 640px) {
+  .workflow-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .workflow-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
+}
+
+.workflow-card {
+  background-color: #FFFFFF;
+  border: 1px solid #111111;
+  box-shadow: 2px 2px 0px 0px #111111;
+  padding: 1.25rem 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.workflow-badge {
+  position: absolute;
+  top: -12px;
+  left: 12px;
+  background-color: #E63946;
+  color: #FFFFFF;
+  border: 1.5px solid #111111;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  font-size: 11px;
+  padding: 1px 6px;
+  box-shadow: 1.5px 1.5px 0px 0px #111111;
+}
+
+.workflow-icon-box {
+  width: 2.75rem;
+  height: 2.75rem;
+  background-color: #F4F4F0;
+  border: 1.5px solid #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #E63946;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.workflow-title {
+  font-size: 1.125rem;
+  font-weight: 800;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #111111;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.workflow-desc {
+  font-size: 12.5px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #4B5563;
+  line-height: 1.5;
+}
+
+.workflow-connector-line {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .workflow-connector-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 38%;
+    right: -14px;
+    z-index: 10;
+    color: #E63946;
+    background-color: #F4F4F0;
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid #111111;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 800;
+  }
+}
+
+.workflow-cta-row {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  background-color: #FFFFFF;
+  border: 1px solid #111111;
+  box-shadow: 2px 2px 0px 0px #111111;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.workflow-cta-text {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 13.5px;
+  font-family: 'JetBrains Mono', monospace;
+  color: #111111;
+}
+
+/* Categorized Tech Stack Grid & Official Logos */
+.tech-stack-section-wrap {
+  margin-top: 3rem;
+}
+
+.tech-stack-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .tech-stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.tech-group-card {
+  background-color: #FFFFFF;
+  border: 1px solid #111111;
+  box-shadow: 2px 2px 0px 0px #111111;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.tech-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #111111;
+  margin-bottom: 1.25rem;
+}
+
+.tech-group-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-family: 'Space Grotesk', sans-serif;
+  text-transform: uppercase;
+  color: #111111;
+  letter-spacing: -0.01em;
+}
+
+.tech-items-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+
+.tech-item-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.75rem;
+  background-color: #F4F4F0;
+  border: 1px solid #111111;
+  box-shadow: 2px 2px 0px 0px #111111;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #111111;
+  transition: all 0.15s ease;
+}
+
+.tech-item-badge:hover {
+  background-color: #F4F4F0;
+  color: #111111;
+}
+
+.tech-item-logo {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .dossier-item-label {
@@ -766,39 +991,45 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .experience-stack {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
   text-align: left;
 }
 
+@media (min-width: 1024px) {
+  .experience-stack {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .experience-card {
   padding: 1.5rem;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   background-color: #FFFFFF;
   box-shadow: 2px 2px 0px 0px #111111;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 @media (min-width: 640px) {
   .experience-card {
-    padding: 2.5rem;
+    padding: 2rem;
   }
 }
 
 .experience-role-header {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding-bottom: 1.5rem;
-  border-bottom: 2px solid #111111;
-  gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #111111;
+  gap: 0.75rem;
 }
 
-@media (min-width: 768px) {
-  .experience-role-header {
-    flex-direction: row;
-    align-items: center;
-  }
+.experience-date-wrap {
+  margin-top: 0.25rem;
 }
 
 .experience-title-wrap {
@@ -893,7 +1124,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-wrap: wrap;
   gap: 0.375rem;
   padding-top: 1rem;
-  border-top: 2px solid #111111;
+  border-top: 1px solid #111111;
 }
 
 .tech-tags-label {
@@ -911,7 +1142,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 5rem;
   position: relative;
   background-color: #FFFFFF;
-  border-top: 2px solid #111111;
+  border-top: 1px solid #111111;
 }
 
 .education-grid {
@@ -937,7 +1168,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .degree-card {
   padding: 1.5rem;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   background-color: #F4F4F0;
   box-shadow: 2px 2px 0px 0px #111111;
   height: 100%;
@@ -958,7 +1189,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: space-between;
   padding-bottom: 1rem;
-  border-bottom: 2px solid #111111;
+  border-bottom: 1px solid #111111;
   margin-bottom: 1.5rem;
   gap: 0.5rem;
 }
@@ -972,7 +1203,7 @@ h1, h2, h3, h4, h5, h6 {
 .degree-icon-box {
   padding: 0.625rem;
   background-color: #FFFFFF;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   color: #E63946;
   display: inline-flex;
   align-items: center;
@@ -1028,13 +1259,13 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 15.5px;
   background-color: #FFFFFF;
   padding: 0.75rem;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   margin-bottom: 0.5rem;
 }
 
 .languages-card {
   padding: 1.5rem;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   background-color: #FFFFFF;
   box-shadow: 2px 2px 0px 0px #111111;
   height: 100%;
@@ -1051,7 +1282,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .languages-header {
   padding-bottom: 1rem;
-  border-bottom: 2px solid #111111;
+  border-bottom: 1px solid #111111;
   margin-bottom: 1.5rem;
 }
 
@@ -1069,7 +1300,7 @@ h1, h2, h3, h4, h5, h6 {
 .language-box {
   padding: 1rem;
   background-color: #F4F4F0;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
 }
 
 .language-name {
@@ -1091,7 +1322,7 @@ h1, h2, h3, h4, h5, h6 {
 .languages-footer-note {
   margin-top: 2rem;
   padding-top: 1rem;
-  border-top: 2px solid #111111;
+  border-top: 1px solid #111111;
   font-size: 13.5px;
   font-family: 'JetBrains Mono', monospace;
   color: #4B5563;
@@ -1120,7 +1351,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .domain-card {
   padding: 1.5rem;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   background-color: #FFFFFF;
   box-shadow: 2px 2px 0px 0px #111111;
   display: flex;
@@ -1144,7 +1375,7 @@ h1, h2, h3, h4, h5, h6 {
 .domain-icon-box {
   padding: 0.625rem;
   background-color: #F4F4F0;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   color: #E63946;
   display: inline-flex;
   align-items: center;
@@ -1190,7 +1421,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .domain-pills-wrap {
   padding-top: 1rem;
-  border-top: 2px solid #111111;
+  border-top: 1px solid #111111;
   display: flex;
   flex-wrap: wrap;
   gap: 0.375rem;
@@ -1202,8 +1433,8 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 5rem;
   position: relative;
   background-color: #FFFFFF;
-  border-top: 2px solid #111111;
-  border-bottom: 2px solid #111111;
+  border-top: 1px solid #111111;
+  border-bottom: 1px solid #111111;
 }
 
 .skills-grid {
@@ -1231,7 +1462,7 @@ h1, h2, h3, h4, h5, h6 {
 .skills-left-card {
   padding: 1.5rem;
   background-color: #F4F4F0;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   box-shadow: 2px 2px 0px 0px #111111;
   height: 100%;
 }
@@ -1282,13 +1513,13 @@ h1, h2, h3, h4, h5, h6 {
 .skills-right-card {
   padding: 1.5rem;
   background-color: #FFFFFF;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   box-shadow: 2px 2px 0px 0px #111111;
 }
 
 .skills-matrix-header {
   padding-bottom: 1rem;
-  border-bottom: 2px solid #111111;
+  border-bottom: 1px solid #111111;
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
@@ -1298,7 +1529,7 @@ h1, h2, h3, h4, h5, h6 {
 .skill-group-box {
   padding: 1rem;
   background-color: #F4F4F0;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   margin-bottom: 1.25rem;
 }
 
@@ -1326,7 +1557,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 5rem;
   position: relative;
   background-color: #F4F4F0;
-  border-top: 2px solid #111111;
+  border-top: 1px solid #111111;
 }
 
 .portfolio-header-flex {
@@ -1365,7 +1596,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .portfolio-card {
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   background-color: #FFFFFF;
   box-shadow: 2px 2px 0px 0px #111111;
   display: flex;
@@ -1385,7 +1616,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 13rem;
   background-color: #111111;
-  border-bottom: 2px solid #111111;
+  border-bottom: 1px solid #111111;
   overflow: hidden;
 }
 
@@ -1430,7 +1661,7 @@ h1, h2, h3, h4, h5, h6 {
 .portfolio-card-footer {
   padding: 1.5rem;
   padding-top: 0;
-  border-top: 2px solid #111111;
+  border-top: 1px solid #111111;
   margin-top: 1rem;
   background-color: #FFFFFF;
 }
@@ -1439,7 +1670,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 3.5rem;
   padding: 1.5rem;
   background-color: #FFFFFF;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   box-shadow: 2px 2px 0px 0px #111111;
   display: flex;
   flex-direction: column;
@@ -1490,7 +1721,7 @@ h1, h2, h3, h4, h5, h6 {
 .contact-channels-card {
   padding: 1.5rem;
   background-color: #FFFFFF;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   box-shadow: 2px 2px 0px 0px #111111;
 }
 
@@ -1498,14 +1729,14 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.25rem;
   font-weight: 800;
   padding-bottom: 1rem;
-  border-bottom: 2px solid #111111;
+  border-bottom: 1px solid #111111;
   margin-bottom: 1.5rem;
 }
 
 .contact-info-item {
   padding: 1rem;
   background-color: #F4F4F0;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   display: flex;
   align-items: flex-start;
   gap: 1rem;
@@ -1515,7 +1746,7 @@ h1, h2, h3, h4, h5, h6 {
 .contact-info-icon {
   padding: 0.75rem;
   background-color: #FFFFFF;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   color: #E63946;
   flex-shrink: 0;
   display: inline-flex;
@@ -1559,7 +1790,7 @@ h1, h2, h3, h4, h5, h6 {
 .form-card {
   padding: 1.5rem;
   background-color: #FFFFFF;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   box-shadow: 2px 2px 0px 0px #111111;
 }
 
@@ -1594,7 +1825,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   padding: 0.75rem 1rem;
   background-color: #F4F4F0;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   color: #111111;
   font-size: 14.5px;
   font-family: 'JetBrains Mono', monospace;
@@ -1614,7 +1845,7 @@ h1, h2, h3, h4, h5, h6 {
 .submitted-box {
   padding: 2rem;
   background-color: #F4F4F0;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   text-align: center;
   margin: 1.5rem 0;
 }
@@ -1747,7 +1978,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   max-width: 56rem;
   background-color: #FFFFFF;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   box-shadow: 8px 8px 0px 0px #111111;
   overflow: hidden;
   z-index: 10;
@@ -1764,7 +1995,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1.5rem;
-  border-bottom: 2px solid #111111;
+  border-bottom: 1px solid #111111;
   background-color: #F4F4F0;
   position: sticky;
   top: 0;
@@ -1814,7 +2045,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .resume-header-block {
-  border-bottom: 2px solid #111111;
+  border-bottom: 1px solid #111111;
   padding-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -1850,7 +2081,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #111111;
   background-color: #F4F4F0;
   padding: 1rem;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -1882,7 +2113,7 @@ h1, h2, h3, h4, h5, h6 {
 .resume-job-card {
   background-color: #F4F4F0;
   padding: 1.5rem;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   box-shadow: 2px 2px 0px 0px #111111;
 }
 
@@ -1923,7 +2154,7 @@ h1, h2, h3, h4, h5, h6 {
 .resume-skill-box {
   padding: 0.875rem;
   background-color: #F4F4F0;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
 }
 
 .skill-box-title {
@@ -1943,7 +2174,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .modal-bottom-bar {
   padding: 0.875rem 1.5rem;
-  border-top: 2px solid #111111;
+  border-top: 1px solid #111111;
   background-color: #F4F4F0;
   display: flex;
   align-items: center;
@@ -1965,7 +2196,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 8rem;
   padding-bottom: 3rem;
   background-color: #FFFFFF;
-  border-bottom: 2px solid #111111;
+  border-bottom: 1px solid #111111;
 }
 
 .directory-header-flex {
@@ -1985,7 +2216,7 @@ h1, h2, h3, h4, h5, h6 {
 .filter-toolbar {
   padding: 1rem;
   background-color: #FFFFFF;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   box-shadow: 2px 2px 0px 0px #111111;
   margin-bottom: 2.5rem;
   text-align: left;
@@ -2007,7 +2238,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #E63946;
   text-transform: uppercase;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid #111111;
+  border-bottom: 1px solid #111111;
 }
 
 .filter-btn-flex {
@@ -2049,7 +2280,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 3rem;
   text-align: center;
   background-color: #FFFFFF;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   box-shadow: 2px 2px 0px 0px #111111;
   display: flex;
   flex-direction: column;
@@ -2068,7 +2299,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 8rem;
   padding-bottom: 4rem;
   background-color: #FFFFFF;
-  border-bottom: 2px solid #111111;
+  border-bottom: 1px solid #111111;
 }
 
 .project-hero-media {
@@ -2076,7 +2307,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 320px;
   background-color: #111111;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   box-shadow: 8px 8px 0px 0px #111111;
   overflow: hidden;
   margin-top: 2rem;
@@ -2097,7 +2328,7 @@ h1, h2, h3, h4, h5, h6 {
 .project-specs-card {
   padding: 1.5rem;
   background-color: #FFFFFF;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   box-shadow: 2px 2px 0px 0px #111111;
   display: flex;
   flex-direction: column;
@@ -2140,7 +2371,7 @@ h1, h2, h3, h4, h5, h6 {
 .project-gallery-card {
   padding: 1rem;
   background-color: #F4F4F0;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   box-shadow: 2px 2px 0px 0px #111111;
   display: flex;
   flex-direction: column;
@@ -2152,14 +2383,14 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 280px;
   background-color: #111111;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   overflow: hidden;
 }
 
 .brainstorm-step-box {
   padding: 1.5rem;
   background-color: #FFFFFF;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   box-shadow: 2px 2px 0px 0px #111111;
   text-align: left;
   display: flex;
@@ -2188,7 +2419,7 @@ h1, h2, h3, h4, h5, h6 {
 .result-card-box {
   padding: 1.5rem;
   background-color: #F4F4F0;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   box-shadow: 2px 2px 0px 0px #111111;
   display: flex;
   flex-direction: column;
@@ -2204,7 +2435,7 @@ h1, h2, h3, h4, h5, h6 {
 .project-cta-card {
   padding: 2.5rem 1.5rem;
   background-color: #FFFFFF;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   box-shadow: 2px 2px 0px 0px #111111;
   display: flex;
   flex-direction: column;
@@ -2234,7 +2465,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   pointer-events: none;
   z-index: 50;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   transition: all 0.1s ease;
   width: 1rem;
   height: 1rem;
@@ -2247,7 +2478,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   pointer-events: none;
   z-index: 50;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   transition: all 0.1s ease;
   width: 1.75rem;
   height: 1.75rem;
@@ -2282,11 +2513,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .border-bottom {
-  border-bottom: 2px solid #111111;
+  border-bottom: 1px solid #111111;
 }
 
 .border-top {
-  border-top: 2px solid #111111;
+  border-top: 1px solid #111111;
 }
 
 /* Layout Grids */
@@ -2436,7 +2667,7 @@ h1, h2, h3, h4, h5, h6 {
 .feature-item-card {
   padding: 0.875rem;
   background-color: #F4F4F0;
-  border: 2px solid #111111;
+  border: 1px solid #111111;
   display: flex;
   align-items: flex-start;
   gap: 0.625rem;

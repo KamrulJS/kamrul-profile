@@ -14,10 +14,9 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
   const [activeSection, setActiveSection] = useState("overview");
 
   const navLinks = [
-    { name: "OVERVIEW", href: "#overview" },
+    {name: "OVERVIEW", href: "#overview" },
     { name: "SUMMARY", href: "#summary" },
     { name: "EXPERIENCE", href: "#experience" },
-    { name: "EDUCATION", href: "#education" },
     { name: "SKILLS", href: "#skills" },
     { name: "PROJECTS", href: "#projects" },
     { name: "CONTACT", href: "#contact" },

@@ -16,41 +16,30 @@ export default function SkillsSection() {
 
   const skillGroups = [
     {
-      category: "FRONT-END",
-      skills: ["HTML5", "CSS3", "JavaScript ES6+", "React.js", "TailwindCSS"],
+      category: "01. FRONTEND",
+      skills: ["JavaScript", "React", "Tailwind CSS", "Bootstrap"],
     },
     {
-      category: "SHOPIFY",
+      category: "02. BACKEND",
+      skills: ["Node.js", "Django", "Express.js", "REST API"],
+    },
+    {
+      category: "03. DATABASE",
+      skills: ["MySQL", "MongoDB", "Firebase"],
+    },
+    {
+      category: "04. CMS & PLATFORMS",
+      skills: ["WordPress", "Shopify", "WooCommerce", "Squarespace", "Wix"],
+    },
+    {
+      category: "05. E-COMMERCE & MARKETING",
       skills: [
-        "Shopify Development",
-        "PageFly",
-        "GemPages",
-        "Custom Shopify Code",
-        "E-commerce Development",
-      ],
-    },
-    {
-      category: "WORDPRESS",
-      skills: [
-        "WordPress Development",
-        "WooCommerce",
-        "Elementor Pro",
-        "Custom CSS",
-        "Loop Build",
-      ],
-    },
-    {
-      category: "ANIMATION / INTERACTION",
-      skills: ["GSAP Timeline Motion", "Micro-Interactions", "Scroll Animations"],
-    },
-    {
-      category: "PROFESSIONAL SKILLS",
-      skills: [
-        "Project Management",
-        "Problem Solving",
-        "Design Analysis",
-        "Communication Skills",
-        "Ability to Work Under Pressure",
+        "Klaviyo",
+        "Stripe",
+        "PayPal",
+        "Google Analytics",
+        "Meta Ads",
+        "Mailchimp",
       ],
     },
   ];

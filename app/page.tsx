@@ -3,9 +3,9 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import MetricsBanner from "@/components/MetricsBanner";
 import DossierSection from "@/components/DossierSection";
 import ExperienceSection from "@/components/ExperienceSection";
-import EducationSection from "@/components/EducationSection";
 import ExpertiseSection from "@/components/ExpertiseSection";
 import SkillsSection from "@/components/SkillsSection";
 import PortfolioSection from "@/components/PortfolioSection";
@@ -24,14 +24,14 @@ export default function Home() {
       {/* Hero Section */}
       <HeroSection onOpenResume={() => setIsResumeOpen(true)} />
 
+      {/* Metrics Banner (Between First and Second Section) */}
+      <MetricsBanner />
+
       {/* Dossier & Metrics */}
       <DossierSection />
 
       {/* Experience Journey */}
       <ExperienceSection />
-
-      {/* Academia & Certifications */}
-      <EducationSection />
 
       {/* Domain Expertise */}
       <ExpertiseSection />
