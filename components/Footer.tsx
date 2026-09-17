@@ -14,7 +14,7 @@ export default function Footer() {
           </div>
           <div>
             <span className="footer-name">KAMRUL ISLAM</span>
-            <span className="footer-sub">Web, Shopify & WordPress Developer</span>
+            <span className="footer-sub">Website & App Developer</span>
           </div>
         </div>
 

@@ -14,11 +14,12 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
   const [activeSection, setActiveSection] = useState("overview");
 
   const navLinks = [
-    {name: "OVERVIEW", href: "#overview" },
+    { name: "OVERVIEW", href: "#overview" },
     { name: "SUMMARY", href: "#summary" },
+    { name: "PROJECTS", href: "#projects" },
     { name: "EXPERIENCE", href: "#experience" },
     { name: "SKILLS", href: "#skills" },
-    { name: "PROJECTS", href: "#projects" },
+    { name: "WORKFLOW", href: "#workflow" },
     { name: "CONTACT", href: "#contact" },
   ];
 
@@ -52,13 +53,13 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
         <div className="container-custom navbar-inner">
           
           {/* Brand Mark */}
-          <a href="#overview" className="brand-mark">
+          <a href="/" className="brand-mark">
             <div className="brand-logo-box">
               KI
             </div>
             <div className="brand-text-wrap">
               <span className="brand-title">
-                KAMRUL ISLAM
+                KAMRUL
               </span>
             </div>
           </a>

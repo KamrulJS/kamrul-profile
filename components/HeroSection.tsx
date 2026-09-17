@@ -22,15 +22,13 @@ export default function HeroSection({ onOpenResume }: HeroSectionProps) {
           >
             {/* Developer Badge */}
             <div className="hero-badge-wrap">
-              <span className="swiss-badge bg-white">
                 <span className="badge-dot" />
-                <span>WEB, SHOPIFY & WORDPRESS DEVELOPER</span>
-              </span>
+                <span>FULL-STACK DEVELOPER</span>
             </div>
 
             {/* Swiss Heading */}
             <h1 className="hero-title">
-              KAMRUL <br />
+              I'M KAMRUL <br />
               <span className="hero-title-highlight">
                 ISLAM
               </span>
@@ -39,13 +37,10 @@ export default function HeroSection({ onOpenResume }: HeroSectionProps) {
             {/* Subtitle Badge Strip */}
             <div className="hero-subtitle-strip">
               <span className="hero-subtitle-pill">
-                SHOPIFY DEVELOPER
+                APPLICATION DEVELOPER
               </span>
               <span className="hero-subtitle-pill">
-                WORDPRESS & E-COMMERCE
-              </span>
-              <span className="hero-subtitle-pill">
-                REACT & TAILWINDCSS
+                E-COMMERCE EXPERT
               </span>
             </div>
 

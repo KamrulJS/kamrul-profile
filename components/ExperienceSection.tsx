@@ -45,7 +45,7 @@ export default function ExperienceSection() {
         {/* Section Header */}
         <div className="section-header">
           <div className="swiss-badge-red mb-2">
-            SECTION 03 — WORK HISTORY
+            SECTION 04 — WORK HISTORY
           </div>
           <h2>
             PROFESSIONAL AGENCY EXPERIENCE
@@ -92,21 +92,7 @@ export default function ExperienceSection() {
                 {exp.summary}
               </p>
 
-              {/* Bullet List */}
-              <div className="experience-bullets-wrap">
-                <h4 className="deliverables-heading">
-                  DELIVERABLES & KEY RESPONSIBILITIES:
-                </h4>
-                
-                <ul className="experience-bullet-list">
-                  {exp.bullets.map((bullet, idx) => (
-                    <li key={idx} className="experience-bullet-item">
-                      <span className="bullet-square" />
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+
 
               {/* Tech Stack Pills */}
               <div className="tech-tags-flex">

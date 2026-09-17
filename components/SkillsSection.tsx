@@ -51,7 +51,7 @@ export default function SkillsSection() {
         {/* Section Header */}
         <div className="section-header">
           <div className="swiss-badge-red mb-2">
-            SECTION 06 — INTERACTIVE TOOLKIT
+            SECTION 07 — INTERACTIVE TOOLKIT
           </div>
           <h2>
             SKILL METRICS & CATEGORIZED TOOL MATRIX

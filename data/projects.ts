@@ -25,14 +25,12 @@ export interface Project {
 }
 
 export const CATEGORIES = [
-  "ALL",
-  "SHOPIFY",
-  "WORDPRESS",
-  "E-COMMERCE",
-  "FRONT-END",
-  "REACT",
-  "WEB DESIGN",
+  "ALL STACKS",
+  "REACT/Next.js",
   "CUSTOM DEVELOPMENT",
+  "UI/UX DESIGN",
+  "SHOPIFY",
+  "E-COMMERCE",
 ] as const;
 
 export const PROJECTS_DATA: Project[] = [
@@ -355,6 +353,174 @@ export const PROJECTS_DATA: Project[] = [
       "Ultra-smooth 60fps GSAP scroll animations",
       "Zero-framework lightweight performance",
       "Creative retro digital interaction design",
+    ],
+  },
+  {
+    id: "proj-7",
+    title: "Kroma Creative Studio Portfolio",
+    slug: "kroma-creative-studio-portfolio",
+    category: "UI/UX DESIGN",
+    platform: "UI/UX & Web Design",
+    technologies: ["Figma", "UI/UX Design", "Wireframing", "TailwindCSS", "React"],
+    shortDescription:
+      "Interactive digital studio brand identity, design system, and pixel-perfect UI/UX design prototype.",
+    description:
+      "A comprehensive UI/UX design project for a modern creative agency. Includes modular design tokens, interactive Figma prototypes, responsive grid structures, and dark/light design systems tailored for creative professionals.",
+    role: "Lead UI/UX & Web Designer",
+    features: [
+      "Figma design system & component library",
+      "Pixel-perfect responsive desktop & mobile artboards",
+      "Interactive micro-interaction prototype states",
+      "Design token mapping for seamless front-end handoff",
+    ],
+    brainstorming: [
+      {
+        title: "UX Strategy",
+        content:
+          "Established bold typography scale and intuitive navigation structure to highlight studio deliverables with zero friction.",
+      },
+    ],
+    images: {
+      hero: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80",
+      gallery: [
+        {
+          title: "UI Design System",
+          url: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80",
+          caption: "Figma design tokens and typography hierarchy.",
+        },
+      ],
+    },
+    liveUrl: "https://example.com/kroma-studio",
+    featured: true,
+    resultsHighlights: [
+      "Pixel-perfect UI design system",
+      "Seamless front-end component handoff",
+    ],
+  },
+  {
+    id: "proj-8",
+    title: "Solstice Multi-Vendor Marketplace",
+    slug: "solstice-multivendor-marketplace",
+    category: "E-COMMERCE",
+    platform: "E-Commerce / Next.js",
+    technologies: ["Next.js", "Stripe", "E-Commerce", "TailwindCSS", "Node.js"],
+    shortDescription:
+      "Scalable headless multi-vendor e-commerce marketplace with real-time search, vendor dashboards, and custom checkout.",
+    description:
+      "Full-scale e-commerce marketplace platform connecting artisan vendors with global buyers. Features instant Algolia-powered search, automated Stripe Connect payout splits, custom seller dashboards, and high-conversion product pages.",
+    role: "Full-Stack E-Commerce Developer",
+    features: [
+      "Next.js App Router server-side rendered storefront",
+      "Stripe Connect multi-vendor automated payment routing",
+      "Real-time product filtering & instant search",
+      "Vendor catalog management & revenue analytics",
+    ],
+    brainstorming: [
+      {
+        title: "Architecture",
+        content:
+          "Decoupled headless storefront using Next.js for sub-second page loads and dynamic checkout scaling.",
+      },
+    ],
+    images: {
+      hero: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1200&q=80",
+      gallery: [
+        {
+          title: "Marketplace Storefront",
+          url: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=80",
+          caption: "Multi-vendor catalog view and instant category filter.",
+        },
+      ],
+    },
+    liveUrl: "https://example.com/solstice-market",
+    featured: true,
+    resultsHighlights: [
+      "Sub-second page load performance",
+      "Seamless multi-vendor Stripe Connect payouts",
+    ],
+  },
+  {
+    id: "proj-9",
+    title: "Veloce High-Performance SaaS Web App",
+    slug: "veloce-saas-web-app",
+    category: "REACT/Next.js Front-End",
+    platform: "React / Web App",
+    technologies: ["React", "Next.js", "TypeScript", "TailwindCSS", "GSAP"],
+    shortDescription:
+      "Lightning-fast SaaS platform marketing site built with Next.js App Router, TypeScript, and GSAP animations.",
+    description:
+      "A modern SaaS marketing landing page engineered for high conversion rates. Features smooth scroll-driven GSAP animations, interactive pricing calculators, light/dark theme toggling, and clean TypeScript component architecture.",
+    role: "Front-End Developer",
+    features: [
+      "Next.js SSG prerendering with TypeScript safety",
+      "Interactive tier pricing toggle calculator",
+      "GSAP timeline scroll-triggered feature reveals",
+      "100/100 Lighthouse performance score optimization",
+    ],
+    brainstorming: [
+      {
+        title: "Performance Focus",
+        content:
+          "Achieved perfect 100/100 Google Lighthouse scores by optimizing font loading and bundle sizes.",
+      },
+    ],
+    images: {
+      hero: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      gallery: [
+        {
+          title: "SaaS Dashboard Hero",
+          url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+          caption: "Hero section with animated dashboard metric preview.",
+        },
+      ],
+    },
+    liveUrl: "https://example.com/veloce-saas",
+    featured: true,
+    resultsHighlights: [
+      "100/100 Lighthouse performance rating",
+      "Interactive pricing calculator UI",
+    ],
+  },
+  {
+    id: "proj-10",
+    title: "Nexus Enterprise Headless CMS Portal",
+    slug: "nexus-enterprise-cms-portal",
+    category: "CUSTOM DEVELOPMENT",
+    platform: "Custom Development",
+    technologies: ["Node.js", "Express.js", "REST API", "MongoDB", "TailwindCSS"],
+    shortDescription:
+      "Custom REST API management dashboard and decoupled headless CMS backend for corporate content publishing.",
+    description:
+      "Custom enterprise portal built to manage multi-channel digital content publishing via RESTful APIs. Includes role-based access control (RBAC), media manager with Cloudinary integration, and live API documentation.",
+    role: "Full-Stack Custom Developer",
+    features: [
+      "Custom Node.js & Express.js REST API server",
+      "Role-based authorization & JWT security",
+      "Decoupled React management console",
+      "MongoDB database indexing & schema validation",
+    ],
+    brainstorming: [
+      {
+        title: "API Design",
+        content:
+          "Designed clean REST endpoints with robust validation middleware to serve content securely.",
+      },
+    ],
+    images: {
+      hero: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      gallery: [
+        {
+          title: "CMS Control Center",
+          url: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+          caption: "API key management & analytics dashboard view.",
+        },
+      ],
+    },
+    liveUrl: "https://example.com/nexus-portal",
+    featured: true,
+    resultsHighlights: [
+      "Secure JWT & RBAC access control",
+      "Decoupled headless content delivery",
     ],
   },
 ];

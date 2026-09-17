@@ -1,45 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import {
-  MessageSquare,
-  FileText,
-  Code2,
-  MonitorCheck,
-  Rocket,
-  ArrowRight,
-  ArrowUpRight,
-  Layers,
-  Wrench,
-} from "lucide-react";
+import { Wrench } from "lucide-react";
 
 export default function DossierSection() {
-  const workflowSteps = [
-    {
-      badge: "01",
-      icon: MessageSquare,
-      title: "MEETING DISCUSS",
-      desc: "We talk about your goals, ideas and requirements. I'll suggest the best solution for your needs.",
-    },
-    {
-      badge: "02",
-      icon: FileText,
-      title: "DESIGN PLANING",
-      desc: "I create a clear project plan, timeline and scope so you know exactly what to expect before we start.",
-    },
-    {
-      badge: "03",
-      icon: Code2,
-      title: "DEVELOPMENT",
-      desc: "I build your website or store with clean code, modern design and best practices for performance and SEO.",
-    },
-    {
-      badge: "04",
-      icon: MonitorCheck,
-      title: "TEST & LAUNCH",
-      desc: "You'll get a preview to check everything. I'll make revisions until it's perfect for you.",
-    },
-  ];
+
 
   const techCategories = [
     {
@@ -95,67 +60,20 @@ export default function DossierSection() {
             SECTION 02 — EXECUTIVE SUMMARY
           </div>
           <h2>
-            PROFESSIONAL DOSSIER & SPECIFICATIONS
+            PROFESSIONAL TECH STACK & TOOLS I USE
           </h2>
-        </div>
-
-        {/* PART 1: DEVELOPMENT WORKFLOW & PROCESS */}
-        <div className="workflow-wrap">
-          <div className="space-y-1">
-            <h3 className="section-heading-lg flex items-center gap-2">
-              <Layers className="w-5 h-5 text-[#E63946]" />
-              <span>DEVELOPMENT WORKFLOW & PROCESS</span>
-            </h3>
-            <p className="workflow-subtitle">
-              A simple and effective process to turn your ideas into a high-quality website or online store.
-            </p>
-          </div>
-
-          <div className="workflow-grid">
-            {workflowSteps.map((step, idx) => {
-              const IconComp = step.icon;
-              return (
-                <div key={idx} className="workflow-card">
-                  <div className="workflow-badge">
-                    {step.badge}
-                  </div>
-
-                  <div>
-                    <div className="workflow-icon-box">
-                      <IconComp className="w-6 h-6" />
-                    </div>
-                    <h4 className="workflow-title">
-                      {step.title}
-                    </h4>
-                    <p className="workflow-desc">
-                      {step.desc}
-                    </p>
-                  </div>
-
-                  {/* Flow Arrow Connector between steps */}
-                  {idx < workflowSteps.length - 1 && (
-                    <div className="workflow-connector-line">
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
-        </div>
-
-        {/* PART 2: CATEGORIZED TECH STACK & TOOLS WITH OFFICIAL LOGOS */}
-        <div className="tech-stack-section-wrap">
-          <div className="space-y-1">
-            <h3 className="section-heading-lg flex items-center gap-2">
-              <Wrench className="w-5 h-5 text-[#E63946]" />
-              <span>CATEGORIZED TECH STACK & TOOLS I USE</span>
-            </h3>
+        <div className="space-y-1">
             <p className="workflow-subtitle">
               I work with modern tools and technologies to build fast, secure and scalable web applications and eCommerce stores.
             </p>
           </div>
+        </div>
+
+
+
+        {/* PART 2: CATEGORIZED TECH STACK & TOOLS WITH OFFICIAL LOGOS */}
+        <div className="tech-stack-section-wrap">
+
 
           <div className="tech-stack-grid">
             {techCategories.map((group, idx) => (

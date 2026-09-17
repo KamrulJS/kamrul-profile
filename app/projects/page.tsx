@@ -93,9 +93,10 @@ export default function ProjectsPage() {
           <div className="portfolio-grid">
             {filteredProjects.length > 0 ? (
               filteredProjects.map((project) => (
-                <div
+                <Link
                   key={project.id}
-                  className="portfolio-card group"
+                  href={`/projects/${project.slug}`}
+                  className="portfolio-card group block"
                 >
                   <div>
                     {/* Image Aspect Box */}
@@ -109,14 +110,8 @@ export default function ProjectsPage() {
                       />
                       
                       <div className="category-overlay-badge">
-                        <span className="swiss-badge-red">
+                        <span>
                           {project.category}
-                        </span>
-                      </div>
-
-                      <div className="platform-overlay-badge">
-                        <span className="swiss-badge">
-                          {project.platform}
                         </span>
                       </div>
                     </div>
@@ -144,17 +139,13 @@ export default function ProjectsPage() {
 
                   {/* Actions */}
                   <div className="portfolio-card-footer">
-                    <Link
-                      href={`/projects/${project.slug}`}
-                      className="swiss-button-primary swiss-button-full mt-4"
-                    >
-                      <Layers className="icon-sm icon-mr" />
+                    <span className="swiss-button-primary">
                       <span>VIEW CASE STUDY</span>
                       <ArrowUpRight className="icon-sm icon-ml" />
-                    </Link>
+                    </span>
                   </div>
 
-                </div>
+                </Link>
               ))
             ) : (
               <div className="no-projects-box">

@@ -25,9 +25,15 @@ body {
   background-color: #F4F4F0;
   color: #111111;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 16.5px;
+  font-size: 17px;
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+p {
+  color: #111111;
+  font-size: 17px;
+  line-height: 1.6;
 }
 
 ::selection {
@@ -96,7 +102,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   padding: 1px 3px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 400;
   transition: all 0.15s ease;
   display: inline-flex;
@@ -177,6 +183,13 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
+.load-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
 /* Custom Retro Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
@@ -231,7 +244,8 @@ h1, h2, h3, h4, h5, h6 {
   text-align: left;
 }
 
-.section-header h2 {
+.section-header h2,
+.portfolio-header-flex h2 {
   font-size: 1.875rem;
   line-height: 2.25rem;
   font-weight: 800;
@@ -239,7 +253,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (min-width: 640px) {
-  .section-header h2 {
+  .section-header h2,
+  .portfolio-header-flex h2 {
     font-size: 2.25rem;
     line-height: 2.5rem;
   }
@@ -752,16 +767,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Workflow Process Step Cards & Connector Lines */
+.workflow-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  border-top: 1px solid #111111;
+  background-color: #F4F4F0;
+  position: relative;
+}
+
 .workflow-wrap {
   margin-bottom: 3.5rem;
 }
 
 .workflow-subtitle {
-  font-size: 15.5px;
-  font-family: 'JetBrains Mono', monospace;
-  color: #4B5563;
+  font-size: 17px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #111111;
+  line-height: 1.6;
   margin-top: 0.35rem;
   margin-bottom: 2rem;
+}
+
+.workflow-grid-container {
+  position: relative;
+  width: 100%;
 }
 
 .workflow-grid {
@@ -779,9 +808,16 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 1024px) {
   .workflow-grid {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.75rem;
   }
+}
+
+.workflow-card-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .workflow-card {
@@ -794,6 +830,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  width: 100%;
 }
 
 .workflow-badge {
@@ -833,33 +870,35 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .workflow-desc {
-  font-size: 12.5px;
+  font-size: 14px;
   font-family: 'Plus Jakarta Sans', sans-serif;
   color: #4B5563;
   line-height: 1.5;
 }
 
-.workflow-connector-line {
+.workflow-connector-curve-desktop {
   display: none;
 }
 
+.workflow-connector-curve-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
 @media (min-width: 1024px) {
-  .workflow-connector-line {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .workflow-connector-curve-desktop {
+    display: block;
     position: absolute;
-    top: 38%;
-    right: -14px;
-    z-index: 10;
-    color: #E63946;
-    background-color: #F4F4F0;
-    width: 20px;
-    height: 20px;
-    border: 1.5px solid #111111;
-    border-radius: 50%;
-    font-size: 10px;
-    font-weight: 800;
+    top: 25%;
+    right: -46px;
+    z-index: 20;
+    pointer-events: none;
+  }
+  .workflow-connector-curve-mobile {
+    display: none;
   }
 }
 
@@ -886,9 +925,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Categorized Tech Stack Grid & Official Logos */
-.tech-stack-section-wrap {
-  margin-top: 3rem;
-}
 
 .tech-stack-grid {
   display: grid;
@@ -910,7 +946,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   height: 100%;
 }
 
@@ -1569,10 +1605,12 @@ h1, h2, h3, h4, h5, h6 {
   text-align: left;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .portfolio-header-flex {
-    flex-direction: row;
-    align-items: flex-end;
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
@@ -1595,6 +1633,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+a.portfolio-card,
 .portfolio-card {
   border: 1px solid #111111;
   background-color: #FFFFFF;
@@ -1603,18 +1642,32 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  position: relative;
   transition: all 0.2s ease;
+  text-decoration: none !important;
+  color: inherit !important;
 }
 
 .portfolio-card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px 0px #111111;
+  transform: none;
+  box-shadow: 2px 2px 0px 0px #111111;
+  text-decoration: none !important;
+}
+
+.portfolio-card *,
+.portfolio-card h1,
+.portfolio-card h2,
+.portfolio-card h3,
+.portfolio-card h4,
+.portfolio-card p,
+.portfolio-card span {
+  text-decoration: none !important;
 }
 
 .portfolio-card-media {
   position: relative;
   width: 100%;
-  height: 13rem;
+  height: 17.5rem;
   background-color: #111111;
   border-bottom: 1px solid #111111;
   overflow: hidden;
@@ -1627,6 +1680,23 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 10;
 }
 
+.category-overlay-badge span,
+.category-overlay-badge .swiss-badge-red {
+  color: #e63946;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: #ffffffba;
+  border: 1.5px solid #111;
+  align-items: center;
+  padding: .2rem .55rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  display: inline-flex;
+  backdrop-filter: blur(5px);
+  box-shadow: none;
+}
+
 .platform-overlay-badge {
   position: absolute;
   bottom: 0.75rem;
@@ -1635,41 +1705,74 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .portfolio-card-content {
-  padding: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  padding-bottom: 3.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.875rem;
+  gap: 0.75rem;
 }
 
 .portfolio-card-title {
   font-size: 1.25rem;
   font-weight: 800;
-  color: #111111;
+  color: #111111 !important;
   line-height: 1.25;
+  text-decoration: none !important;
 }
 
 .portfolio-card-summary {
-  font-size: 14.5px;
-  color: #4B5563;
-  line-height: 1.6;
+  font-size: 14px;
+  color: #4B5563 !important;
+  line-height: 1.5;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  margin-top: 0.15rem;
+  text-decoration: none !important;
 }
 
 .portfolio-card-footer {
-  padding: 1.5rem;
-  padding-top: 0;
-  border-top: 1px solid #111111;
-  margin-top: 1rem;
-  background-color: #FFFFFF;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 20;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border-top: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.portfolio-card:hover .portfolio-card-footer {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.portfolio-card-footer .swiss-button-primary {
+  box-shadow: none;
+  border: none;
+  border-top: 1px solid #111;
+  border-left: 1px solid #111;
+  border-radius: 0;
+  margin-top: 0;
+  padding: .4rem 1rem;
+  font-size: 12.5px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  background: #E63946 !important;
+  color: #FFFFFF !important;
 }
 
 .portfolio-bottom-banner {
   margin-top: 3.5rem;
   padding: 1.5rem;
-  background-color: #FFFFFF;
+  background-color: #E63946 !important;
+  color: #FFFFFF !important;
   border: 1px solid #111111;
   box-shadow: 2px 2px 0px 0px #111111;
   display: flex;
@@ -1678,6 +1781,24 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   gap: 1rem;
   text-align: left;
+}
+
+.portfolio-bottom-banner h4,
+.portfolio-bottom-banner p,
+.portfolio-bottom-banner .hero-subtitle {
+  color: #FFFFFF !important;
+}
+
+.portfolio-bottom-banner .swiss-button-secondary {
+  background-color: #FFFFFF !important;
+  color: #111111 !important;
+  border: 1px solid #111111;
+  box-shadow: 2px 2px 0px 0px #111111;
+}
+
+.portfolio-bottom-banner .swiss-button-secondary:hover {
+  background-color: #F4F4F0 !important;
+  color: #111111 !important;
 }
 
 @media (min-width: 640px) {
@@ -2696,16 +2817,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-subtitle {
-  font-size: 1.125rem;
+  font-size: 17px;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  color: #4B5563;
+  color: #111111;
   line-height: 1.6;
-}
-
-@media (min-width: 640px) {
-  .hero-subtitle {
-    font-size: 1.25rem;
-  }
 }
 
 .section-heading-xl {

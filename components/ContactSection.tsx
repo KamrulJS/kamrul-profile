@@ -15,27 +15,38 @@ export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
     setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      setSubmitted(true);
-      
-      try {
-        confetti({
-          particleCount: 80,
-          spread: 70,
-          origin: { y: 0.6 }
-        });
-      } catch (err) {
-        // Fallback silently if confetti fails
-      }
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 1000);
+      if (res.ok) {
+        setSubmitted(true);
+        try {
+          confetti({
+            particleCount: 80,
+            spread: 70,
+            origin: { y: 0.6 },
+          });
+        } catch (err) {
+          // Fallback silently if confetti fails
+        }
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        setSubmitted(true);
+      }
+    } catch (err) {
+      setSubmitted(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const scrollToTop = () => {
@@ -49,7 +60,7 @@ export default function ContactSection() {
         {/* Section Header */}
         <div className="section-header">
           <div className="swiss-badge-red mb-2">
-            SECTION 08 — INITIATE CONTACT
+            SECTION 07 — INITIATE CONTACT
           </div>
           <h2>
             HAVE A PROJECT IN MIND? LET&apos;S BUILD SOMETHING MEANINGFUL.

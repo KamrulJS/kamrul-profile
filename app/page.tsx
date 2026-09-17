@@ -7,7 +7,7 @@ import MetricsBanner from "@/components/MetricsBanner";
 import DossierSection from "@/components/DossierSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ExpertiseSection from "@/components/ExpertiseSection";
-import SkillsSection from "@/components/SkillsSection";
+import WorkflowSection from "@/components/WorkflowSection";
 import PortfolioSection from "@/components/PortfolioSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -27,22 +27,22 @@ export default function Home() {
       {/* Metrics Banner (Between First and Second Section) */}
       <MetricsBanner />
 
-      {/* Dossier & Metrics */}
+      {/* Dossier & Metrics (Section 02) */}
       <DossierSection />
 
-      {/* Experience Journey */}
-      <ExperienceSection />
-
-      {/* Domain Expertise */}
-      <ExpertiseSection />
-
-      {/* Skills Matrix */}
-      <SkillsSection />
-
-      {/* Portfolio Showcase */}
+      {/* Featured Portfolio Showcase (Section 03) */}
       <PortfolioSection />
 
-      {/* Contact & Inquiry */}
+      {/* Experience Journey (Section 04) */}
+      <ExperienceSection />
+
+      {/* Domain Expertise (Section 05) */}
+      <ExpertiseSection />
+
+      {/* Project Workflow (Section 06) */}
+      <WorkflowSection />
+
+      {/* Contact & Inquiry (Section 07) */}
       <ContactSection />
 
       {/* Footer */}
