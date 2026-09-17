@@ -18,7 +18,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
     const file = new Blob([
       `KAMRUL ISLAM\n` +
       `Web Developer · Shopify Developer · WordPress Developer · Front-End Developer\n` +
-      `Email: kamrul.dev.contact@gmail.com\n` +
+      `Email: kamrulmk2016@gmail.com\n` +
       `Location: Dhaka, Bangladesh\n\n` +
       `PROFESSIONAL SUMMARY:\n` +
       `Web Developer crafting high-quality digital experiences with Shopify, WordPress, React and modern front-end technologies. Specializes in custom Shopify Liquid code, PageFly, GemPages, WooCommerce, Elementor Pro builds, and dynamic React interfaces backed by clean CSS and GSAP animations.\n\n` +
@@ -139,7 +139,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
                 <div className="resume-contact-box">
                   <div className="contact-row-item">
                     <Mail className="w-4 h-4 text-[#E63946]" />
-                    <span>kamrul.dev.contact@gmail.com</span>
+                    <span>kamrulmk2016@gmail.com</span>
                   </div>
                   <div className="contact-row-item">
                     <MapPin className="w-4 h-4 text-[#E63946]" />

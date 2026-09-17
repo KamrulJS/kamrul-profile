@@ -16,7 +16,7 @@ export async function POST(req: Request) {
 
     // Clean minimal template for Recipient (Portfolio Owner / Kamrul)
     const recipientEmailTemplate = {
-      to: "kamrul.dev.contact@gmail.com",
+      to: "kamrulmk2016@gmail.com",
       subject: `[INQUIRY] ${formattedSubject} — ${name}`,
       html: `
         <div style="font-family: 'JetBrains Mono', monospace, sans-serif; background-color: #F4F4F0; padding: 24px; color: #111111;">

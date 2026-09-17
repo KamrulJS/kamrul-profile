@@ -86,8 +86,8 @@ export default function ContactSection() {
                     <span className="contact-info-label">
                       PRIMARY EMAIL ADDRESS
                     </span>
-                    <a href="mailto:kamrul.dev.contact@gmail.com" className="contact-info-text">
-                      kamrul.dev.contact@gmail.com
+                    <a href="mailto:kamrulmk2016@gmail.com" className="contact-info-text">
+                      kamrulmk2016@gmail.com
                     </a>
                   </div>
                 </div>
@@ -143,7 +143,7 @@ export default function ContactSection() {
                   </a>
 
                   <a
-                    href="mailto:kamrul.dev.contact@gmail.com"
+                    href="mailto:kamrulmk2016@gmail.com"
                     className="swiss-button-primary"
                   >
                     <span>DIRECT MAIL</span>
