@@ -15,11 +15,11 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
 
   const navLinks = [
     { name: "OVERVIEW", href: "#overview" },
-    { name: "SUMMARY", href: "#summary" },
     { name: "PROJECTS", href: "#projects" },
+    { name: "SUMMARY", href: "#summary" },
+    { name: "WORKFLOW", href: "#workflow" },
     { name: "EXPERIENCE", href: "#experience" },
     { name: "SKILLS", href: "#skills" },
-    { name: "WORKFLOW", href: "#workflow" },
     { name: "CONTACT", href: "#contact" },
   ];
 

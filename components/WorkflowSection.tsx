@@ -43,7 +43,7 @@ export default function WorkflowSection() {
         {/* Section Header */}
         <div className="section-header">
           <div className="swiss-badge-red mb-2">
-            SECTION 06 — PROJECT WORKFLOW
+            SECTION 04 — PROJECT WORKFLOW
           </div>
           <h2>
             DEVELOPMENT WORKFLOW & PROCESS

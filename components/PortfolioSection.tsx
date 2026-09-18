@@ -53,10 +53,10 @@ export default function PortfolioSection() {
         <div className="portfolio-header-flex">
           <div className="top-title-area">
             <div className="swiss-badge-red mb-2">
-              SECTION 03 — SELECTED CASE STUDIES
+              SECTION 02 — SELECTED CASE STUDIES
             </div>
             <h2>
-              FEATURED PORTFOLIO SHOWCASE
+              PORTFOLIO SHOWCASE
             </h2>
           </div>
 

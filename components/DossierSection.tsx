@@ -26,7 +26,7 @@ export default function DossierSection() {
         { name: "REST API", logo: "https://cdn.simpleicons.org/fastapi/009688" },
         { name: "MongoDB", logo: "https://cdn.simpleicons.org/mongodb/47A248" },
         { name: "MySQL", logo: "https://cdn.simpleicons.org/mysql/4479A1" },
-        { name: "AWS", logo: "https://cdn.simpleicons.org/amazonwebservices/232F3E" },
+        { name: "AWS", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
       ],
     },
     {
@@ -42,7 +42,9 @@ export default function DossierSection() {
     {
       title: "04. E-COMMERCE & MARKETING",
       items: [
-        { name: "Klaviyo", logo: "https://cdn.simpleicons.org/klaviyo/000000" },
+        { name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
+        { name: "Etsy", logo: "https://cdn.simpleicons.org/etsy/F1641E" }, 
+        { name: "Klaviyo", logo: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23111111'><rect width='24' height='24' rx='3'/><path d='M6 5h3v14H6zm4 0h3.5v5.5L17 5h4.2l-5.2 7.2L21.5 19H17l-4-6.2V19H10z' fill='%23ffffff'/></svg>" },
         { name: "Google Analytics", logo: "https://cdn.simpleicons.org/googleanalytics/E37400" },
         { name: "Meta Ads", logo: "https://cdn.simpleicons.org/meta/0467DF" },
         { name: "SEO", logo: "https://cdn.simpleicons.org/googlesearchconsole/4285F4" },
@@ -57,10 +59,10 @@ export default function DossierSection() {
         {/* Section Header */}
         <div className="section-header">
           <div className="swiss-badge-red mb-2">
-            SECTION 02 — EXECUTIVE SUMMARY
+            SECTION 03 — EXECUTIVE SUMMARY
           </div>
           <h2>
-            PROFESSIONAL TECH STACK & TOOLS I USE
+            PROFESSIONAL TECH STACK & TOOLS
           </h2>
         <div className="space-y-1">
             <p className="workflow-subtitle">

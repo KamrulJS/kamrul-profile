@@ -65,7 +65,7 @@ export default function ExpertiseSection() {
         {/* Section Header */}
         <div className="section-header">
           <div className="swiss-badge-red mb-2">
-            SECTION 05 — TECHNICAL EXPERTISE
+            SECTION 06 — TECHNICAL EXPERTISE
           </div>
           <h2>
             CORE CAPABILITIES & SPECIALIZATIONS

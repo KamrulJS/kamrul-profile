@@ -45,7 +45,7 @@ export default function ExperienceSection() {
         {/* Section Header */}
         <div className="section-header">
           <div className="swiss-badge-red mb-2">
-            SECTION 04 — WORK HISTORY
+            SECTION 05 — WORK HISTORY
           </div>
           <h2>
             PROFESSIONAL AGENCY EXPERIENCE

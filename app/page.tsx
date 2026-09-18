@@ -27,20 +27,20 @@ export default function Home() {
       {/* Metrics Banner (Between First and Second Section) */}
       <MetricsBanner />
 
-      {/* Dossier & Metrics (Section 02) */}
-      <DossierSection />
-
-      {/* Featured Portfolio Showcase (Section 03) */}
+      {/* Featured Portfolio Showcase (Section 02) */}
       <PortfolioSection />
 
-      {/* Experience Journey (Section 04) */}
+      {/* Dossier & Tech Stack (Section 03) */}
+      <DossierSection />
+
+      {/* Project Workflow (Section 04) */}
+      <WorkflowSection />
+
+      {/* Experience Journey (Section 05) */}
       <ExperienceSection />
 
-      {/* Domain Expertise (Section 05) */}
+      {/* Technical Expertise (Section 06) */}
       <ExpertiseSection />
-
-      {/* Project Workflow (Section 06) */}
-      <WorkflowSection />
 
       {/* Contact & Inquiry (Section 07) */}
       <ContactSection />
