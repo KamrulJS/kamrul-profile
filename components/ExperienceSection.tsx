@@ -6,7 +6,7 @@ export default function ExperienceSection() {
   const experiences = [
     {
       id: "gendler-schmitz",
-      role: "FRONT-END DEVELOPER / WORDPRESS DEVELOPER",
+      role: "FRONT-END DEVELOPER",
       company: "Gendler & Schmitz Unternehmeragentur GmbH",
       period: "JAN 2022 — APR 2022",
       location: "Germany (Remote)",
@@ -77,13 +77,10 @@ export default function ExperienceSection() {
                     <MapPin className="w-4 h-4 text-[#111111]" />
                     <span>{exp.location}</span>
                   </span>
-                </div>
-
-                <div className="experience-date-wrap">
-                  <div className="swiss-badge bg-[#F4F4F0]">
-                    <Calendar className="w-4 h-4 mr-2 text-[#E63946] inline" />
+                  <span className="date-name">
+                    <Calendar className="w-4 h-4 text-[#111111]" />
                     <span>{exp.period}</span>
-                  </div>
+                  </span>
                 </div>
               </div>
 

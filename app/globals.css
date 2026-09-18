@@ -648,7 +648,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 5rem;
   padding-bottom: 5rem;
   position: relative;
-  background-color: #FFFFFF;
+  background-color: #ffeff0;
   border-top: 1px solid #111111;
   border-bottom: 1px solid #111111;
 }
@@ -989,10 +989,12 @@ h1, h2, h3, h4, h5, h6 {
     gap: .5rem;
     padding: .4rem .75rem;
     font-family: JetBrains Mono, monospace;
-    font-size: 12.5px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 500;
     transition: all .15s;
     display: inline-flex;
+    justify-content: center;
+    min-width: 100px; 
 }
 
 .tech-item-badge:hover {
@@ -1088,8 +1090,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .experience-company-strip {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: start;
   gap: 1rem;
   margin-top: 0.5rem;
   font-size: 14.5px;
@@ -1105,7 +1108,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #E63946;
 }
 
-.location-name {
+.location-name,
+.date-name {
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
