@@ -569,12 +569,40 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1.5rem;
 }
 
-.hero-actions {
+.hero-actions,
+.hero-actions-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
   padding-top: 0.5rem;
+}
+
+.hero-social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hero-social-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  background-color: #FFFFFF;
+  color: #111111;
+  border: 1px solid #111111;
+  box-shadow: 2px 2px 0px 0px #111111;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.hero-social-icon-btn:hover {
+  background-color: #E63946;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px 0px #111111;
 }
 
 .hero-avatar-wrap {
@@ -654,8 +682,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .metrics-banner-section {
-  padding-top: 3.5rem;
-  padding-bottom: 2rem;
+  border-top: 1px solid #111111;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
   background-color: #F4F4F0;
   position: relative;
 }
@@ -664,7 +693,6 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  margin-bottom: 3.5rem;
 }
 
 @media (min-width: 640px) {
