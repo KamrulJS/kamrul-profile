@@ -107,8 +107,8 @@ export const PROJECTS_DATA: Project[] = [
   },
   {
     id: "proj-2",
-    title: "Vanguard Corporate WordPress Site",
-    slug: "vanguard-corporate-wordpress-site",
+    title: "Vanguard Corporate WordPress",
+    slug: "vanguard-corporate-wordpress", 
     category: "WORDPRESS",
     platform: "WordPress",
     technologies: ["WordPress", "Elementor Pro", "Custom CSS", "Loop Build", "PHP"],

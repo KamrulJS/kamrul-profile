@@ -173,11 +173,8 @@ export default function PortfolioSection() {
         <div className="portfolio-bottom-banner">
           <div>
             <h4 className="text-lg font-extrabold font-display uppercase">
-              LOOKING FOR MORE PROJECT DEMOS & SHOPIFY/WORDPRESS CASE STUDIES?
+              LOOKING FOR MORE PROJECT CASE STUDIES?
             </h4>
-            <p className="hero-subtitle">
-              Explore the dedicated project index filtered by platform, tech stack, and storefront architecture.
-            </p>
           </div>
 
           <Link
