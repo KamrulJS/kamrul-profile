@@ -1,4 +1,4 @@
-﻿/* Project Showcase Section Styles */
+﻿/* Two-Row Infinite Marquee Showcase Section */
 .project-showcase-section {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -9,239 +9,286 @@
   overflow: hidden;
 }
 
-/* Version Toggle Header Bar */
-.showcase-header-flex {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1.5rem;
+/* Section Header */
+.showcase-header-wrap {
   margin-bottom: 3rem;
 }
 
-@media (min-width: 768px) {
-  .showcase-header-flex {
-    flex-direction: row;
-    align-items: flex-end;
-  }
+/* Two-Row Container Stack */
+.marquee-rows-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  overflow: hidden;
 }
 
-.version-toggle-container {
-  display: inline-flex;
-  gap: 0.5rem;
-  background-color: #FFFFFF;
-  padding: 0.35rem;
-  border: 1px solid #111111;
-  box-shadow: 3px 3px 0px 0px #111111;
-}
-
-.version-toggle-btn {
-  padding: 0.5rem 1rem;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11.5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border: 1px solid transparent;
-  background-color: transparent;
-  color: #111111;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.version-toggle-btn.active {
-  background-color: #E63946;
-  color: #FFFFFF;
-  border-color: #111111;
-  box-shadow: 2px 2px 0px 0px #111111;
-}
-
-/* Version 1: Horizontal Drag Track Carousel */
-.showcase-carousel-wrap {
+/* Single Marquee Row Wrapper */
+.marquee-row-wrapper {
   position: relative;
   width: 100%;
   overflow: hidden;
-  cursor: grab;
   user-select: none;
-  padding: 1rem 0;
+  -webkit-user-select: none;
+  touch-action: pan-y;
 }
 
-.showcase-carousel-wrap:active {
-  cursor: grabbing;
-}
-
-.showcase-track {
+/* Infinite Moving Track */
+.marquee-row-track {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
+  width: max-content;
   will-change: transform;
 }
 
-.showcase-card-slide {
-  flex: 0 0 320px;
-  max-width: 320px;
+/* Slide Item Box - 4 Cards visible on desktop screens */
+.marquee-row-slide {
+  flex: 0 0 280px;
+  width: 280px;
+  user-select: none;
 }
 
 @media (min-width: 640px) {
-  .showcase-card-slide {
+  .marquee-row-slide {
     flex: 0 0 380px;
-    max-width: 380px;
+    width: 380px; 
   }
-}
+} 
 
 @media (min-width: 1024px) {
-  .showcase-card-slide {
-    flex: 0 0 440px;
-    max-width: 440px;
+  .marquee-row-slide {
+    flex: 0 0 380px;
+    width: 380px; 
   }
 }
 
-/* Card Mockup Component */
-.showcase-card {
-  background-color: #FFFFFF;
-  border: 1px solid #111111;
-  box-shadow: 4px 4px 0px 0px #111111;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+@media (min-width: 1400px) {
+  .marquee-row-slide {
+    flex: 0 0 450px;
+    width: 450px; 
+  }
 }
 
-.showcase-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 8px 8px 0px 0px #E63946;
-}
-
-.showcase-card-media {
+/* Compact Visual Card Box - NO Shadow */
+.marquee-card-box {
   position: relative;
   width: 100%;
-  height: 240px;
-  background-color: #EAEAE4;
+  height: 300px;
+  background-color: #FFFFFF;
+  border: 1.5px solid #111111;
+  box-shadow: none !important;
+  border-radius: 8px;
   overflow: hidden;
+  transition: transform 0.25s ease;
+  user-select: none;
 }
 
-.showcase-card-image {
+@media (min-width: 768px) {
+  .marquee-card-box {
+    height: 350px;
+  }
+}
+
+.marquee-card-wrap:hover .marquee-card-box {
+  box-shadow: none !important;
+}
+
+/* Image Wrapper */
+.marquee-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #EAEAE4;
+  user-select: none;
+}
+
+.marquee-card-image {
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
-.showcase-card:hover .showcase-card-image {
-  transform: scale(1.05);
+.marquee-card-wrap:hover .marquee-card-image {
+  transform: scale(1.06);
 }
 
-.showcase-card-body {
-  padding: 1.5rem;
+/* Always-Visible Category Badge */
+.marquee-category-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  background-color: #FFFFFF;
+  color: #E63946;
+  border: 1px solid #111111;
+  padding: 2px 7px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Translucent Blur Hover Overlay - Content at Bottom & More Transparent */
+.marquee-hover-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: rgba(11, 11, 11, 0.377);
+  backdrop-filter: blur(6px); 
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 1rem;
+  text-align: left;
+}
+
+.marquee-card-wrap:hover .marquee-hover-overlay {
+  opacity: 1;
+}
+
+.marquee-hover-content {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  transform: translateY(8px);
+  transition: transform 0.3s ease;
+  width: 100%;
 }
 
-.showcase-card-category {
-  display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10.5px;
+.marquee-card-wrap:hover .marquee-hover-content {
+  transform: translateY(0);
+}
+
+.marquee-hover-category {
+  font-size: 10px;
   font-weight: 700;
   color: #E63946;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
 }
 
-.showcase-card-title {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #111111;
-  line-height: 1.3;
-  margin-bottom: 0.5rem;
+.marquee-hover-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFFFFF !important;
+  line-height: 1.25;
+  text-transform: uppercase;
+  margin: 0;
 }
 
-.showcase-card-desc {
-  font-size: 14px;
-  color: #444444;
-  line-height: 1.5;
-  margin-bottom: 1rem;
+.marquee-hover-tech {
+  font-size: 11px;
+  color: #E0E0E0 !important;
+  margin-top: 0.15rem;
 }
 
-.showcase-tech-stack {
+/* Professional Lightbox Modal Overlay (Swiss Retro #F4F4F0 Theme) */
+.lightbox-overlay-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
 
-.showcase-tech-pill {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  font-weight: 600;
-  color: #111111;
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(17, 17, 17, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.lightbox-modal-card {
+  position: relative;
+  z-index: 110;
+  width: 95vw;
+  max-width: 1250px;
+  height: 88vh;
+  max-height: 900px;
   background-color: #F4F4F0;
-  border: 1px solid #111111;
-  padding: 2px 6px;
+  border: 2px solid #111111;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
-.showcase-card-footer {
+.lightbox-toolbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 0.75rem;
-  border-top: 1px solid #EAEAE4;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: #666666;
+  padding: 0.9rem 1.25rem;
+  background-color: #FFFFFF;
+  border-bottom: 2px solid #111111;
 }
-
-/* Version 2: Swiss Retro Grid Layout */
-.showcase-grid-wrap {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-@media (min-width: 640px) {
-  .showcase-grid-wrap {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .showcase-grid-wrap {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Navigation Arrows for Slider */
-.slider-controls-flex {
+.lightbox-toolbar .lightbox-title-area {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
+  justify-content: center;
+  gap: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 100%;
+  color: #111111;
 }
 
-.slider-nav-btn {
-  width: 2.75rem;
-  height: 2.75rem;
+.lightbox-image-stage {
+  position: relative;
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #EAEAE4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lightbox-main-img {
+  object-fit: contain !important;
+  padding: 0.75rem;
+}
+
+.lightbox-nav-arrow {
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
   background-color: #FFFFFF;
-  border: 1px solid #111111;
-  box-shadow: 2px 2px 0px 0px #111111;
+  border: 1.5px solid #111111;
+  color: #000000;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #111111;
   cursor: pointer;
-  transition: all 0.15s ease;
+  z-index: 120;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.096);
 }
 
-.slider-nav-btn:hover {
+.lightbox-nav-arrow:hover {
   background-color: #E63946;
-  color: #FFFFFF;
-  transform: translateY(-2px);
-  box-shadow: 4px 4px 0px 0px #111111;
+  border-color: #E63946;
+  color: #E0E0E0;
 }
 
-.slider-indicator-text {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  font-weight: 700;
-  color: #111111;
+.lightbox-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background-color: #FFFFFF;
+  border-top: 2px solid #111111;
 }

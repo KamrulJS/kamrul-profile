@@ -189,6 +189,12 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     margin-top: 40px;
 }
+.load-btn button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
 
 /* Custom Retro Scrollbar */
 ::-webkit-scrollbar {
@@ -674,7 +680,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 5rem;
   padding-bottom: 5rem;
   position: relative;
-  background-color: #ffeff0;
+  background-color: #ffffff;
   border-top: 1px solid #111111;
   border-bottom: 1px solid #111111;
 }
@@ -1682,6 +1688,7 @@ a.portfolio-card,
   transition: all 0.2s ease;
   text-decoration: none !important;
   color: inherit !important;
+  height: 100%;
 }
 
 .portfolio-card:hover {
@@ -1742,7 +1749,6 @@ a.portfolio-card,
 
 .portfolio-card-content {
   padding: 1.25rem 1.5rem;
-  padding-bottom: 3.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;

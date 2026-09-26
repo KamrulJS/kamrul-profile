@@ -113,6 +113,13 @@ export default function PortfolioSection() {
                         {project.category}
                       </span>
                     </div>
+                    {/* Card Actions */}
+                    <div className="portfolio-card-footer">
+                      <span className="swiss-button-primary">
+                        {/* <span>PROJECT STUDY</span> */}
+                        <ArrowUpRight className="w-4 h-4 ml-1.5" />
+                      </span>
+                    </div>
                   </div>
 
                   {/* Content Box */}
@@ -137,12 +144,12 @@ export default function PortfolioSection() {
                 </div>
 
                 {/* Card Actions */}
-                <div className="portfolio-card-footer">
+                {/* <div className="portfolio-card-footer">
                   <span className="swiss-button-primary">
                     <span>PROJECT STUDY</span>
                     <ArrowUpRight className="w-4 h-4 ml-1.5" />
                   </span>
-                </div>
+                </div> */}
 
               </Link>
             </div>
@@ -160,12 +167,12 @@ export default function PortfolioSection() {
               {isLoadingMore ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin text-[#FFFFFF]" />
-                  <span>LOADING MORE PROJECTS...</span>
+                  <span>LOADING MORE...</span>
                 </>
               ) : (
                 <>
-                  <RotateCw className="w-4 h-4 text-[#FFFFFF]" />
-                  <span>LOAD MORE PROJECTS [{filteredProjects.length - visibleCount} REMAINING]</span>
+                  <RotateCw className="w-2 h-2 text-[#FFFFFF]" />
+                  <span>MORE PROJECTS [{filteredProjects.length - visibleCount}]</span>
                 </>
               )}
             </button>

@@ -98,7 +98,7 @@ export default function ProjectsPage() {
                   href={`/projects/${project.slug}`}
                   className="portfolio-card group block"
                 >
-                  <div>
+
                     {/* Image Aspect Box */}
                     <div className="portfolio-card-media">
                       <Image
@@ -135,7 +135,6 @@ export default function ProjectsPage() {
                         ))}
                       </div>
                     </div>
-                  </div>
 
                   {/* Actions */}
                   <div className="portfolio-card-footer">

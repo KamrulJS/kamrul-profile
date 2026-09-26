@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import { useState } from "react";
-import { Mail, MapPin, Send, CheckCircle2, ArrowUp } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle2, ArrowUp, AlertCircle } from "lucide-react";
 import confetti from "canvas-confetti";
 
 const LinkedinIcon = () => (
@@ -32,12 +32,15 @@ export default function ContactSection() {
 
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
 
     setSubmitting(true);
+    setErrorMessage(null);
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -45,7 +48,9 @@ export default function ContactSection() {
         body: JSON.stringify(formData),
       });
 
-      if (res.ok) {
+      const data = await res.json();
+
+      if (res.ok && data.success) {
         setSubmitted(true);
         try {
           confetti({
@@ -58,10 +63,10 @@ export default function ContactSection() {
         }
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
-        setSubmitted(true);
+        setErrorMessage(data.error || "Failed to transmit inquiry. Please try again.");
       }
     } catch (err) {
-      setSubmitted(true);
+      setErrorMessage("Network error. You can also email directly to kamrulmk2016@gmail.com.");
     } finally {
       setSubmitting(false);
     }
@@ -78,7 +83,7 @@ export default function ContactSection() {
         {/* Section Header */}
         <div className="section-header">
           <div className="swiss-badge-red mb-2">
-            SECTION 08 â€” INITIATE CONTACT
+            SECTION 08 — INITIATE CONTACT
           </div>
           <h2>
             HAVE A PROJECT IN MIND? LET&apos;S BUILD SOMETHING MEANINGFUL.
@@ -104,7 +109,7 @@ export default function ContactSection() {
                     <span className="contact-info-label">
                       PRIMARY EMAIL ADDRESS
                     </span>
-                    <a href="mailto:kamrulmk2016@gmail.com" className="contact-info-text">
+                    <a href="mailto:kamrulmk2016@gmail.com" className="contact-info-text text-[#E63946] hover:underline font-bold">
                       kamrulmk2016@gmail.com
                     </a>
                   </div>
@@ -184,21 +189,28 @@ export default function ContactSection() {
               </h3>
 
               {submitted ? (
-                <div className="submitted-box">
-                  <CheckCircle2 className="submitted-icon" />
-                  <h4 className="submitted-title">INQUIRY TRANSMITTED!</h4>
-                  <p className="submitted-desc">
-                    Thank you! Your message has been routed to Kamrul Islam&apos;s inbox. Response expected within 24 hours.
+                <div className="submitted-box p-6 bg-[#FFFFFF] border-2 border-[#111111] rounded-lg text-center space-y-3">
+                  <CheckCircle2 className="w-12 h-12 text-[#E63946] mx-auto" />
+                  <h4 className="submitted-title font-extrabold text-lg text-[#111111]">INQUIRY TRANSMITTED!</h4>
+                  <p className="submitted-desc text-sm text-[#333333] leading-relaxed">
+                    Thank you! Your message has been sent to <strong>kamrulmk2016@gmail.com</strong>. I will review your requirements and reply within 24 hours.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="swiss-button-secondary"
+                    className="swiss-button-secondary mt-2 inline-flex items-center justify-center"
                   >
                     SEND ANOTHER MESSAGE
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
+                  {errorMessage && (
+                    <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 text-xs font-semibold rounded flex items-center gap-2">
+                      <AlertCircle className="w-4 h-4 flex-shrink-0 text-red-600" />
+                      <span>{errorMessage}</span>
+                    </div>
+                  )}
+
                   <div className="form-grid-2">
                     <div className="form-group">
                       <label className="form-label">
@@ -293,4 +305,3 @@ export default function ContactSection() {
     </section>
   );
 }
-
