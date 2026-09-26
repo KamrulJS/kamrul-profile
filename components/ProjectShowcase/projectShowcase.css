@@ -1,0 +1,247 @@
+﻿/* Project Showcase Section Styles */
+.project-showcase-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #F4F4F0;
+  border-top: 1px solid #111111;
+  border-bottom: 1px solid #111111;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Version Toggle Header Bar */
+.showcase-header-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .showcase-header-flex {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+.version-toggle-container {
+  display: inline-flex;
+  gap: 0.5rem;
+  background-color: #FFFFFF;
+  padding: 0.35rem;
+  border: 1px solid #111111;
+  box-shadow: 3px 3px 0px 0px #111111;
+}
+
+.version-toggle-btn {
+  padding: 0.5rem 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: #111111;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.version-toggle-btn.active {
+  background-color: #E63946;
+  color: #FFFFFF;
+  border-color: #111111;
+  box-shadow: 2px 2px 0px 0px #111111;
+}
+
+/* Version 1: Horizontal Drag Track Carousel */
+.showcase-carousel-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  padding: 1rem 0;
+}
+
+.showcase-carousel-wrap:active {
+  cursor: grabbing;
+}
+
+.showcase-track {
+  display: flex;
+  gap: 2rem;
+  will-change: transform;
+}
+
+.showcase-card-slide {
+  flex: 0 0 320px;
+  max-width: 320px;
+}
+
+@media (min-width: 640px) {
+  .showcase-card-slide {
+    flex: 0 0 380px;
+    max-width: 380px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .showcase-card-slide {
+    flex: 0 0 440px;
+    max-width: 440px;
+  }
+}
+
+/* Card Mockup Component */
+.showcase-card {
+  background-color: #FFFFFF;
+  border: 1px solid #111111;
+  box-shadow: 4px 4px 0px 0px #111111;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.showcase-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 8px 8px 0px 0px #E63946;
+}
+
+.showcase-card-media {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background-color: #EAEAE4;
+  overflow: hidden;
+}
+
+.showcase-card-image {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.showcase-card:hover .showcase-card-image {
+  transform: scale(1.05);
+}
+
+.showcase-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.showcase-card-category {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #E63946;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.showcase-card-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #111111;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.showcase-card-desc {
+  font-size: 14px;
+  color: #444444;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.showcase-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.showcase-tech-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  color: #111111;
+  background-color: #F4F4F0;
+  border: 1px solid #111111;
+  padding: 2px 6px;
+}
+
+.showcase-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+  border-top: 1px solid #EAEAE4;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: #666666;
+}
+
+/* Version 2: Swiss Retro Grid Layout */
+.showcase-grid-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .showcase-grid-wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .showcase-grid-wrap {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Navigation Arrows for Slider */
+.slider-controls-flex {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.slider-nav-btn {
+  width: 2.75rem;
+  height: 2.75rem;
+  background-color: #FFFFFF;
+  border: 1px solid #111111;
+  box-shadow: 2px 2px 0px 0px #111111;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #111111;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.slider-nav-btn:hover {
+  background-color: #E63946;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px 0px #111111;
+}
+
+.slider-indicator-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: #111111;
+}

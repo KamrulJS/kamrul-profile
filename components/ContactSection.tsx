@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { Mail, MapPin, Send, CheckCircle2, ArrowUp } from "lucide-react";
@@ -78,7 +78,7 @@ export default function ContactSection() {
         {/* Section Header */}
         <div className="section-header">
           <div className="swiss-badge-red mb-2">
-            SECTION 07 — INITIATE CONTACT
+            SECTION 08 â€” INITIATE CONTACT
           </div>
           <h2>
             HAVE A PROJECT IN MIND? LET&apos;S BUILD SOMETHING MEANINGFUL.
@@ -293,3 +293,4 @@ export default function ContactSection() {
     </section>
   );
 }
+

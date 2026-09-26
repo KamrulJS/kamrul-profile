@@ -20,7 +20,7 @@ export default function MetricsBanner() {
     {
       value: "GLOBAL",
       label: "CLIENT COLLABORATION",
-      tags: ["UK", "USA", "Germany", "Netherlands", "Canada"],
+      tags: ["UK", "USA", "Germany", "Canada"],
     },
   ];
 

@@ -1,9 +1,9 @@
-"use client";
+﻿"use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import gsap from "gsap";
 import { ArrowUpRight, Loader2, RotateCw } from "lucide-react";
 import { getAllProjects, CATEGORIES } from "@/data/projects";
 
@@ -11,6 +11,7 @@ export default function PortfolioSection() {
   const [selectedCategory, setSelectedCategory] = useState<string>("ALL STACKS");
   const [visibleCount, setVisibleCount] = useState<number>(6);
   const [isLoadingMore, setIsLoadingMore] = useState<boolean>(false);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   const allProjects = getAllProjects();
 
@@ -31,6 +32,17 @@ export default function PortfolioSection() {
         });
 
   const displayedProjects = filteredProjects.slice(0, visibleCount);
+
+  useEffect(() => {
+    if (gridRef.current) {
+      const cards = gridRef.current.children;
+      gsap.fromTo(
+        cards,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.35, stagger: 0.05, ease: "power2.out" }
+      );
+    }
+  }, [selectedCategory, visibleCount]);
 
   const handleCategorySelect = (category: string) => {
     setSelectedCategory(category);
@@ -60,7 +72,7 @@ export default function PortfolioSection() {
             </h2>
           </div>
 
-          {/* Top Right Header Tab Filters (All Categories) */}
+          {/* Top Right Header Tab Filters */}
           <div className="filter-btn-flex">
             {CATEGORIES.map((cat) => {
               const isActive = selectedCategory === cat;
@@ -77,76 +89,67 @@ export default function PortfolioSection() {
           </div>
         </div>
 
-        {/* Project Cards Grid with Framer Motion */}
-        <motion.div layout className="portfolio-grid">
-          <AnimatePresence mode="popLayout">
-            {displayedProjects.map((project) => (
-              <motion.div
-                key={project.id}
-                layout
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+        {/* Project Cards Grid with GSAP Animations */}
+        <div ref={gridRef} className="portfolio-grid">
+          {displayedProjects.map((project) => (
+            <div key={project.id}>
+              <Link
+                href={`/projects/${project.slug}`}
+                className="portfolio-card group block h-full"
               >
-                <Link
-                  href={`/projects/${project.slug}`}
-                  className="portfolio-card group block h-full"
-                >
-                  <div>
-                    {/* Image Box */}
-                    <div className="portfolio-card-media">
-                      <Image
-                        src={project.images.hero}
-                        alt={project.title}
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover"
-                      />
-                      
-                      <div className="category-overlay-badge">
-                        <span>
-                          {project.category}
+                <div>
+                  {/* Image Box */}
+                  <div className="portfolio-card-media">
+                    <Image
+                      src={project.images.hero}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover"
+                    />
+                    
+                    <div className="category-overlay-badge">
+                      <span>
+                        {project.category}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Content Box */}
+                  <div className="portfolio-card-content">
+                    <h3 className="portfolio-card-title">
+                      {project.title}
+                    </h3>
+
+                    <p className="portfolio-card-summary">
+                      {project.shortDescription}
+                    </p>
+
+                    {/* Tech Tags */}
+                    <div className="tech-tags-flex mt-1">
+                      {project.technologies.slice(0, 4).map((tech, idx) => (
+                        <span key={idx} className="swiss-badge-sm">
+                          #{tech}
                         </span>
-                      </div>
-                    </div>
-
-                    {/* Content Box */}
-                    <div className="portfolio-card-content">
-                      <h3 className="portfolio-card-title">
-                        {project.title}
-                      </h3>
-
-                      <p className="portfolio-card-summary">
-                        {project.shortDescription}
-                      </p>
-
-                      {/* Tech Tags */}
-                      <div className="tech-tags-flex mt-1">
-                        {project.technologies.slice(0, 4).map((tech, idx) => (
-                          <span key={idx} className="swiss-badge-sm">
-                            #{tech}
-                          </span>
-                        ))}
-                      </div>
+                      ))}
                     </div>
                   </div>
+                </div>
 
-                  {/* Card Actions (Hover Reveal Button) */}
-                  <div className="portfolio-card-footer">
-                    <span className="swiss-button-primary">
-                      <span>PROJECT STUDY</span>
-                      <ArrowUpRight className="w-4 h-4 ml-1.5" />
-                    </span>
-                  </div>
+                {/* Card Actions */}
+                <div className="portfolio-card-footer">
+                  <span className="swiss-button-primary">
+                    <span>PROJECT STUDY</span>
+                    <ArrowUpRight className="w-4 h-4 ml-1.5" />
+                  </span>
+                </div>
 
-                </Link>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+              </Link>
+            </div>
+          ))}
+        </div>
 
-        {/* Load More Trigger with Spinner */}
+        {/* Load More Trigger */}
         {visibleCount < filteredProjects.length && (
           <div className="load-btn">
             <button
@@ -169,7 +172,7 @@ export default function PortfolioSection() {
           </div>
         )}
 
-        {/* Bottom Banner CTA (#E63946 Background) */}
+        {/* Bottom Banner CTA */}
         <div className="portfolio-bottom-banner">
           <div>
             <h4 className="text-lg font-extrabold font-display uppercase">

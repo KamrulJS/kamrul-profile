@@ -1,29 +1,26 @@
-"use client";
+﻿"use client";
 
-import { useEffect, useState } from "react";
-import { motion, useSpring, useMotionValue } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
 
 export default function CustomCursor() {
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-
-  const mouseX = useMotionValue(-100);
-  const mouseY = useMotionValue(-100);
-
-  const springConfig = { damping: 25, stiffness: 250 };
-  const cursorX = useSpring(mouseX, springConfig);
-  const cursorY = useSpring(mouseY, springConfig);
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (window.matchMedia("(pointer: coarse)").matches) {
+    if (typeof window === "undefined" || window.matchMedia("(pointer: coarse)").matches) {
       return;
     }
 
     setIsVisible(true);
 
+    const xTo = gsap.quickTo(cursorRef.current, "x", { duration: 0.15, ease: "power2.out" });
+    const yTo = gsap.quickTo(cursorRef.current, "y", { duration: 0.15, ease: "power2.out" });
+
     const moveMouse = (e: MouseEvent) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
+      xTo(e.clientX);
+      yTo(e.clientY);
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -43,18 +40,21 @@ export default function CustomCursor() {
       window.removeEventListener("mousemove", moveMouse);
       window.removeEventListener("mouseover", handleMouseOver);
     };
-  }, [mouseX, mouseY]);
+  }, []);
 
   if (!isVisible) return null;
 
   return (
-    <motion.div
+    <div
+      ref={cursorRef}
       className={isHovered ? "custom-cursor-hovered" : "custom-cursor-normal"}
       style={{
-        x: cursorX,
-        y: cursorY,
-        translateX: "-50%",
-        translateY: "-50%",
+        position: "fixed",
+        top: 0,
+        left: 0,
+        transform: "translate(-50%, -50%)",
+        pointerEvents: "none",
+        zIndex: 9999,
       }}
     />
   );

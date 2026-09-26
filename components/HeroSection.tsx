@@ -1,6 +1,7 @@
-"use client";
+﻿"use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 import { ArrowDownRight } from "lucide-react";
 
 interface HeroSectionProps {
@@ -32,18 +33,33 @@ const InstagramIcon = () => (
 );
 
 export default function HeroSection({ onOpenResume }: HeroSectionProps) {
+  const leftColRef = useRef<HTMLDivElement>(null);
+  const rightColRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (leftColRef.current) {
+      gsap.fromTo(
+        leftColRef.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
+      );
+    }
+    if (rightColRef.current) {
+      gsap.fromTo(
+        rightColRef.current,
+        { opacity: 0, scale: 0.96 },
+        { opacity: 1, scale: 1, duration: 0.6, delay: 0.15, ease: "power2.out" }
+      );
+    }
+  }, []);
+
   return (
     <section id="overview" className="hero-section swiss-grid-pattern">
       <div className="container-custom relative z-10">
         <div className="hero-grid">
           
           {/* Left Column */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="hero-left-col hero-content"
-          >
+          <div ref={leftColRef} className="hero-left-col hero-content">
             {/* Developer Badge */}
             <div className="hero-badge-wrap">
                 <span className="badge-dot" />
@@ -131,19 +147,14 @@ export default function HeroSection({ onOpenResume }: HeroSectionProps) {
                 <ArrowDownRight className="w-4 h-4 ml-2" />
               </a>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Column: Avatar Circle */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="hero-right-col hero-avatar-wrap"
-          >
+          <div ref={rightColRef} className="hero-right-col hero-avatar-wrap">
             <div className="hero-avatar-circle group">
              <img src="https://images.unsplash.com/photo-1705645930353-0e335311ef20?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fG1hbnxlbnwwfHwwfHx8MA%3D%3D" alt="" />
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>

@@ -1,7 +1,7 @@
-"use client";
+﻿"use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import gsap from "gsap";
 import { Menu, X, FileText, ArrowUpRight } from "lucide-react";
 
 interface NavbarProps {
@@ -12,6 +12,7 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("overview");
+  const mobileDrawerRef = useRef<HTMLDivElement>(null);
 
   const navLinks = [
     { name: "OVERVIEW", href: "#overview" },
@@ -20,6 +21,7 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
     { name: "WORKFLOW", href: "#workflow" },
     { name: "EXPERIENCE", href: "#experience" },
     { name: "SKILLS", href: "#skills" },
+    { name: "SHOWCASE", href: "#showcase" },
     { name: "CONTACT", href: "#contact" },
   ];
 
@@ -47,6 +49,34 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileMenuOpen && mobileDrawerRef.current) {
+      gsap.fromTo(
+        mobileDrawerRef.current,
+        { opacity: 0, y: -10 },
+        { opacity: 1, y: 0, duration: 0.25, ease: "power2.out" }
+      );
+    }
+  }, [mobileMenuOpen]);
+
+  const closeMobileMenu = (cb?: () => void) => {
+    if (mobileDrawerRef.current) {
+      gsap.to(mobileDrawerRef.current, {
+        opacity: 0,
+        y: -10,
+        duration: 0.2,
+        ease: "power2.in",
+        onComplete: () => {
+          setMobileMenuOpen(false);
+          if (cb) cb();
+        },
+      });
+    } else {
+      setMobileMenuOpen(false);
+      if (cb) cb();
+    }
+  };
+
   return (
     <>
       <header className={`site-header swiss-nav ${scrolled ? "scrolled" : ""}`}>
@@ -64,7 +94,7 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
             </div>
           </a>
 
-          {/* Desktop Nav Links (No outer box) */}
+          {/* Desktop Nav Links */}
           <nav className="desktop-nav">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.substring(1);
@@ -105,7 +135,16 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
               <FileText className="icon-sm" />
             </button>
 
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="icon-btn-box">
+            <button
+              onClick={() => {
+                if (mobileMenuOpen) {
+                  closeMobileMenu();
+                } else {
+                  setMobileMenuOpen(true);
+                }
+              }}
+              className="icon-btn-box"
+            >
               {mobileMenuOpen ? <X className="icon-md" /> : <Menu className="icon-md" />}
             </button>
           </div>
@@ -113,57 +152,47 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
       </header>
 
       {/* Mobile Menu Drawer */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="mobile-menu-drawer"
-          >
-            <div className="swiss-card mobile-menu-card">
-              <div className="mobile-menu-header">
-                <span className="swiss-badge-red">NAVIGATION INDEX</span>
-              </div>
-
-              <div className="menu-grid">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="mobile-menu-item"
-                  >
-                    {link.name}
-                  </a>
-                ))}
-              </div>
-
-              <div className="mobile-actions-stack">
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenResume();
-                  }}
-                  className="swiss-button-secondary swiss-button-full"
-                >
-                  <FileText className="icon-sm icon-red icon-mr" />
-                  <span>VIEW FULL CV DOCUMENT</span>
-                </button>
-
-                <a
-                  href="#contact"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="swiss-button-primary swiss-button-full"
-                >
-                  <span>CONTACT KAMRUL</span>
-                  <ArrowUpRight className="icon-sm icon-ml" />
-                </a>
-              </div>
+      {mobileMenuOpen && (
+        <div ref={mobileDrawerRef} className="mobile-menu-drawer">
+          <div className="swiss-card mobile-menu-card">
+            <div className="mobile-menu-header">
+              <span className="swiss-badge-red">NAVIGATION INDEX</span>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
+            <div className="menu-grid">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => closeMobileMenu()}
+                  className="mobile-menu-item"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
+
+            <div className="mobile-actions-stack">
+              <button
+                onClick={() => closeMobileMenu(onOpenResume)}
+                className="swiss-button-secondary swiss-button-full"
+              >
+                <FileText className="icon-sm icon-red icon-mr" />
+                <span>VIEW FULL CV DOCUMENT</span>
+              </button>
+
+              <a
+                href="#contact"
+                onClick={() => closeMobileMenu()}
+                className="swiss-button-primary swiss-button-full"
+              >
+                <span>CONTACT KAMRUL</span>
+                <ArrowUpRight className="icon-sm icon-ml" />
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

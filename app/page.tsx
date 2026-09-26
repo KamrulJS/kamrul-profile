@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
@@ -9,6 +9,7 @@ import ExperienceSection from "@/components/ExperienceSection";
 import ExpertiseSection from "@/components/ExpertiseSection";
 import WorkflowSection from "@/components/WorkflowSection";
 import PortfolioSection from "@/components/PortfolioSection";
+import ProjectShowcase from "@/components/ProjectShowcase/ProjectShowcase";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ResumeModal from "@/components/ResumeModal";
@@ -42,7 +43,10 @@ export default function Home() {
       {/* Technical Expertise (Section 06) */}
       <ExpertiseSection />
 
-      {/* Contact & Inquiry (Section 07) */}
+      {/* Interactive Project Showcase Demo (Section 07 - 2 Design Versions) */}
+      <ProjectShowcase />
+
+      {/* Contact & Inquiry (Section 08) */}
       <ContactSection />
 
       {/* Footer */}

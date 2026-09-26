@@ -1,9 +1,12 @@
-"use client";
+﻿"use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
 import { Wrench, CheckCircle2, Sparkles } from "lucide-react";
 
 export default function SkillsSection() {
+  const metersRef = useRef<HTMLDivElement>(null);
+
   const proficiencyMeters = [
     { skill: "Shopify & Custom Liquid Code", level: 95 },
     { skill: "PageFly & GemPages Page Builders", level: 94 },
@@ -44,6 +47,20 @@ export default function SkillsSection() {
     },
   ];
 
+  useEffect(() => {
+    if (metersRef.current) {
+      const fills = metersRef.current.querySelectorAll(".skill-meter-fill");
+      fills.forEach((fill, idx) => {
+        const targetLevel = proficiencyMeters[idx]?.level || 80;
+        gsap.fromTo(
+          fill,
+          { width: "0%" },
+          { width: `${targetLevel}%`, duration: 1, delay: idx * 0.08, ease: "power2.out" }
+        );
+      });
+    }
+  }, []);
+
   return (
     <section id="skills" className="skills-section">
       <div className="container-custom">
@@ -68,7 +85,7 @@ export default function SkillsSection() {
                 <span>DEVELOPMENT PROFICIENCY METERS</span>
               </h3>
 
-              <div className="meters-stack">
+              <div ref={metersRef} className="meters-stack">
                 {proficiencyMeters.map((item, idx) => (
                   <div key={idx} className="meter-item">
                     <div className="meter-label-row">
@@ -77,13 +94,7 @@ export default function SkillsSection() {
                     </div>
 
                     <div className="skill-meter-bg">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${item.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: idx * 0.08 }}
-                        className="skill-meter-fill"
-                      />
+                      <div className="skill-meter-fill" style={{ width: 0 }} />
                     </div>
                   </div>
                 ))}
