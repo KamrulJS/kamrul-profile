@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
@@ -128,7 +128,7 @@ export default function ProjectLightbox({
         </div>
 
         {/* Center Image Stage */}
-        <div className="lightbox-image-stage">
+        <div className="lightbox-image-stage" style={{ position: "relative" }}>
           <Image
             src={currentImage}
             alt={`${project.title} - view ${activeImgIndex + 1}`}

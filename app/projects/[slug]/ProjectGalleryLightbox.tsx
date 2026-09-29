@@ -124,6 +124,7 @@ export default function ProjectGalleryLightbox({ project }: ProjectGalleryLightb
           <div
             onClick={() => setIsLightboxOpen(true)}
             className="group relative w-full h-[360px] sm:h-[480px] bg-white border border-[#111111] shadow-[6px_6px_0px_0px_#111111] overflow-hidden rounded-lg cursor-pointer transition-all duration-200 hover:border-[#E63946]"
+            style={{ position: "relative" }}
           >
             <Image
               src={currentImg.url}
@@ -182,11 +183,12 @@ export default function ProjectGalleryLightbox({ project }: ProjectGalleryLightb
                     setActiveIndex(idx);
                     resetZoom();
                   }}
-                  className={`relative w-20 h-14 rounded border transition-all overflow-hidden bg-white ${
+                  className={`w-20 h-14 rounded border transition-all overflow-hidden bg-white ${
                     idx === activeIndex
                       ? "border-2 border-[#E63946] shadow-[2px_2px_0px_0px_#E63946] scale-105"
                       : "border-[#111111] opacity-75 hover:opacity-100 hover:border-[#111111]"
                   }`}
+                  style={{ position: "relative" }}
                 >
                   <Image
                     src={img.url}
@@ -355,6 +357,7 @@ export default function ProjectGalleryLightbox({ project }: ProjectGalleryLightb
             <div
               className="relative w-full h-full max-w-6xl max-h-[82vh] transition-transform duration-100 ease-out"
               style={{
+                position: "relative",
                 transform: `scale(${zoomScale}) translate(${panPos.x / zoomScale}px, ${panPos.y / zoomScale}px)`,
               }}
             >
