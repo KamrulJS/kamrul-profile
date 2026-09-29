@@ -80,7 +80,7 @@ export default function DossierSection() {
 
           <div className="tech-stack-grid">
             {techCategories.map((group, idx) => (
-              <div className="tech-group-card ">
+              <div key={idx} className="tech-group-card ">
                 <div className="tech-group-header">
                   <h4 className="tech-group-title ml-2">
                     <span className="swiss-badge-red text-[11px] py-0.5 px-2">0{idx + 1}. </span>

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
@@ -12,8 +12,11 @@ export default function CustomCursor() {
     if (typeof window === "undefined" || window.matchMedia("(pointer: coarse)").matches) {
       return;
     }
-
     setIsVisible(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible || !cursorRef.current) return;
 
     const xTo = gsap.quickTo(cursorRef.current, "x", { duration: 0.15, ease: "power2.out" });
     const yTo = gsap.quickTo(cursorRef.current, "y", { duration: 0.15, ease: "power2.out" });
@@ -40,7 +43,7 @@ export default function CustomCursor() {
       window.removeEventListener("mousemove", moveMouse);
       window.removeEventListener("mouseover", handleMouseOver);
     };
-  }, []);
+  }, [isVisible]);
 
   if (!isVisible) return null;
 
