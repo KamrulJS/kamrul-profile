@@ -75,7 +75,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="site-root" suppressHydrationWarning>
+    <html lang="en" className="site-root" suppressHydrationWarning data-scroll-behavior="smooth">
       <body className="site-body" suppressHydrationWarning>
         <SmoothScroll>
           <CustomCursor />

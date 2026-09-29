@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
@@ -92,7 +92,7 @@ export default function PortfolioSection() {
         {/* Project Cards Grid with GSAP Animations */}
         <div ref={gridRef} className="portfolio-grid">
           {displayedProjects.map((project) => (
-            <div key={project.id}>
+            <div key={project.id} className="relative h-full">
               <Link
                 href={`/projects/${project.slug}`}
                 className="portfolio-card group block h-full"
