@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { Layout, Code2, Zap, Settings } from "lucide-react";
 
@@ -65,7 +65,7 @@ export default function ExpertiseSection() {
         {/* Section Header */}
         <div className="section-header">
           <div className="swiss-badge-red mb-2">
-            SECTION 06 — TECHNICAL EXPERTISE
+            SECTION 05 — TECHNICAL EXPERTISE
           </div>
           <h2>
             CORE CAPABILITIES & SPECIALIZATIONS

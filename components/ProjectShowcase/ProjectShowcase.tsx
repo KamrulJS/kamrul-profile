@@ -22,9 +22,9 @@ export default function ProjectShowcase() {
       <div className="container-custom">
         
         {/* Section Header following Swiss Retro Visual Language */}
-        <div className="showcase-header-wrap">
+        <div className="section-header">
           <div className="swiss-badge-red mb-2">
-            SECTION 07 - FEATURED WORK GALLERY
+            SECTION 06 — FEATURED WORK GALLERY
           </div>
           <h2>
             FEATURED PROJECTS & CASE STUDIES

@@ -8,7 +8,7 @@ export default function DossierSection() {
 
   const techCategories = [
     {
-      title: "01. FRONTEND",
+      title: "FRONTEND",
       items: [
         { name: "JavaScript", logo: "https://cdn.simpleicons.org/javascript/F7DF1E" },
         { name: "React", logo: "https://cdn.simpleicons.org/react/61DAFB" },
@@ -18,7 +18,7 @@ export default function DossierSection() {
       ],
     },
     {
-      title: "02. BACKEND",
+      title: "BACKEND",
       items: [
         { name: "Node.js", logo: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
         { name: "Django", logo: "https://cdn.simpleicons.org/django/092E20" },
@@ -30,7 +30,7 @@ export default function DossierSection() {
       ],
     },
     {
-      title: "03. CMS & PLATFORMS",
+      title: "CMS & PLATFORMS",
       items: [
         { name: "WordPress", logo: "https://cdn.simpleicons.org/wordpress/21759B" },
         { name: "Shopify", logo: "https://cdn.simpleicons.org/shopify/96BF48" },
@@ -40,8 +40,9 @@ export default function DossierSection() {
       ],
     },
     {
-      title: "04. E-COMMERCE & MARKETING",
+      title: "E-COMMERCE & MARKETING",
       items: [
+        { name: "Shopify", logo: "https://cdn.simpleicons.org/shopify/96BF48" },
         { name: "Amazon", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
         { name: "Etsy", logo: "https://cdn.simpleicons.org/etsy/F1641E" }, 
         { name: "Klaviyo", logo: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23111111'><rect width='24' height='24' rx='3'/><path d='M6 5h3v14H6zm4 0h3.5v5.5L17 5h4.2l-5.2 7.2L21.5 19H17l-4-6.2V19H10z' fill='%23ffffff'/></svg>" },
@@ -79,14 +80,13 @@ export default function DossierSection() {
 
           <div className="tech-stack-grid">
             {techCategories.map((group, idx) => (
-              <div key={idx} className="tech-group-card">
+              <div className="tech-group-card ">
                 <div className="tech-group-header">
-                  <h4 className="tech-group-title">
+                  <h4 className="tech-group-title ml-2">
+                    <span className="swiss-badge-red text-[11px] py-0.5 px-2">0{idx + 1}. </span>
                     {group.title}
                   </h4>
-                  <span className="swiss-badge-red text-[11px] py-0.5 px-2">
-                    {group.items.length}
-                  </span>
+                  
                 </div> 
 
                 <div className="tech-items-flex">

@@ -19,7 +19,6 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
     { name: "PROJECTS", href: "#projects" },
     { name: "SUMMARY", href: "#summary" },
     { name: "WORKFLOW", href: "#workflow" },
-    { name: "EXPERIENCE", href: "#experience" },
     { name: "SKILLS", href: "#skills" },
     { name: "SHOWCASE", href: "#showcase" },
     { name: "CONTACT", href: "#contact" },
@@ -112,13 +111,6 @@ export default function Navbar({ onOpenResume }: NavbarProps) {
 
           {/* Action CTAs */}
           <div className="nav-actions">
-            <button
-              onClick={onOpenResume}
-              className="swiss-button-secondary"
-            >
-              <FileText className="icon-sm icon-red icon-mr" />
-              <span>RESUME / CV</span>
-            </button>
 
             <a
               href="#contact"

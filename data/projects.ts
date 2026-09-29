@@ -77,7 +77,7 @@ export const PROJECTS_DATA: Project[] = [
       },
     ],
     images: {
-      hero: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80",
+      hero: "/project-hero.png",
       gallery: [
         {
           title: "Homepage Hero & Featured Collection",

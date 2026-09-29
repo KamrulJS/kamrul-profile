@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import MetricsBanner from "@/components/MetricsBanner";
 import DossierSection from "@/components/DossierSection";
-import ExperienceSection from "@/components/ExperienceSection";
 import ExpertiseSection from "@/components/ExpertiseSection";
 import WorkflowSection from "@/components/WorkflowSection";
 import PortfolioSection from "@/components/PortfolioSection";
@@ -37,16 +36,13 @@ export default function Home() {
       {/* Project Workflow (Section 04) */}
       <WorkflowSection />
 
-      {/* Experience Journey (Section 05) */}
-      <ExperienceSection />
-
-      {/* Technical Expertise (Section 06) */}
+      {/* Technical Expertise (Section 05) */}
       <ExpertiseSection />
 
-      {/* Interactive Project Showcase Demo (Section 07 - 2 Design Versions) */}
+      {/* Interactive Project Showcase Demo (Section 06) */}
       <ProjectShowcase />
 
-      {/* Contact & Inquiry (Section 08) */}
+      {/* Contact & Inquiry (Section 07) */}
       <ContactSection />
 
       {/* Footer */}

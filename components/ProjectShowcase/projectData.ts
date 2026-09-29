@@ -1,4 +1,4 @@
-﻿export interface ShowcaseProject {
+export interface ShowcaseProject {
   id: number;
   title: string;
   category: "Shopify" | "WordPress" | "MERN" | "SaaS" | "Web Development" | "E-Commerce";
@@ -115,7 +115,7 @@ export const placeholderProjectsRow2: ShowcaseProject[] = [
     id: 8,
     title: "Gourmet Culinary & Dining Web App",
     category: "Web Development",
-    techStack: ["React", "Express", "TailwindCSS", "Framer Motion"],
+    techStack: ["React", "Express", "TailwindCSS", "GSAP"],
     description: "Interactive dining experience page featuring table reservation booking, order tracking, and chef recipes.",
     client: "L'Etoile Culinary Group",
     year: "2026",

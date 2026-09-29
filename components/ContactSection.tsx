@@ -83,7 +83,7 @@ export default function ContactSection() {
         {/* Section Header */}
         <div className="section-header">
           <div className="swiss-badge-red mb-2">
-            SECTION 08 — INITIATE CONTACT
+            SECTION 07 — INITIATE CONTACT
           </div>
           <h2>
             HAVE A PROJECT IN MIND? LET&apos;S BUILD SOMETHING MEANINGFUL.

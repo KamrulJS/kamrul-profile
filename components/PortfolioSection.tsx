@@ -127,11 +127,6 @@ export default function PortfolioSection() {
                     <h3 className="portfolio-card-title">
                       {project.title}
                     </h3>
-
-                    <p className="portfolio-card-summary">
-                      {project.shortDescription}
-                    </p>
-
                     {/* Tech Tags */}
                     <div className="tech-tags-flex mt-1">
                       {project.technologies.slice(0, 4).map((tech, idx) => (
