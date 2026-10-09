@@ -1,0 +1,171 @@
+/* ==========================================================================
+   PROJECT SHOWCASE — VARIATION 01: CLASSIC EDITORIAL CARD
+   Theme: Swiss Retro / Creative Portfolio
+   ========================================================================== */
+
+/* VERSION 01 — CLASSIC EDITORIAL CARD */
+.v1-editorial-card {
+  position: relative;
+  background-color: #FFFFFF;
+  border: 1px solid #111111;
+  box-shadow: 2px 2px 0px 0px #111111;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  outline: none;
+}
+
+.v1-editorial-card:hover,
+.v1-editorial-card:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px 0px #111111;
+}
+
+.v1-card-inner-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none !important;
+  color: inherit !important;
+  position: relative;
+}
+
+.v1-top-controls {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.v1-category-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  background-color: #FFFFFF;
+  color: #111111;
+  border: 1.5px solid #111111;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  box-shadow: 1.5px 1.5px 0px 0px #111111;
+}
+
+.v1-arrow-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: #FFFFFF;
+  color: #111111;
+  border: 1.5px solid #111111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1.5px 1.5px 0px 0px #111111;
+}
+
+.v1-media-box {
+  position: relative;
+  width: 100%;
+  height: 27rem;
+  background-color: #111111;
+  overflow: hidden;
+}
+
+.v1-image-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  will-change: transform, filter;
+}
+
+.v1-image-wrapper img {
+  object-fit: cover !important;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  will-change: transform, filter;
+}
+
+.v1-gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 20%,
+    rgba(0, 0, 0, 0.12) 45%,
+    rgba(17, 17, 17, 0.72) 75%,
+    rgba(17, 17, 17, 0.96) 100%
+  );
+  z-index: 10;
+  pointer-events: none;
+  will-change: opacity;
+}
+
+.v1-bottom-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.v1-project-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF !important;
+  line-height: 1.25;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.v1-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.v1-tech-tag {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    letter-spacing: 1px;
+    background-color: #ffffff26;
+    border: 1px solid #fff6;
+    align-items: center;
+    padding: .15rem .5rem;
+    font-family: JetBrains Mono, monospace;
+    font-size: 10px;
+    font-weight: 400;
+    display: inline-flex;
+}
+
+/* MOBILE ACCESSIBILITY & RESPONSIVENESS */
+@media (max-width: 768px) {
+  .v1-media-box {
+    height: 22rem;
+  }
+
+  .v1-project-title {
+    font-size: 1.15rem;
+  }
+}
