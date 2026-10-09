@@ -144,9 +144,6 @@ export default function Navbar({ onOpenResume }) {
       {mobileMenuOpen && (
         <div ref={mobileDrawerRef} className="mobile-menu-drawer">
           <div className="swiss-card mobile-menu-card">
-            <div className="mobile-menu-header">
-              <span className="swiss-badge-red">NAVIGATION INDEX</span>
-            </div>
 
             <div className="menu-grid">
               {navLinks.map((link) => (

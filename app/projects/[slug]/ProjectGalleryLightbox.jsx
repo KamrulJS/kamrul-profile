@@ -293,12 +293,12 @@ export default function ProjectGalleryLightbox({ project }) {
               <span className="swiss-badge-red" style={{ fontSize: "11px", padding: "0.2rem 0.5rem" }}>
                 {project.category}
               </span>
-              <span style={{ fontWeight: 700, color: "#FFFFFF" }}>
+              <span style={{ fontWeight: 800, color: "#111111", fontSize: "14px", textTransform: "uppercase" }}>
                 {project.title}
               </span>
             </div>
 
-            <div style={{ fontWeight: 800, color: "#FFFFFF", background: "#222222", padding: "0.25rem 0.75rem", border: "1px solid #444" }}>
+            <div style={{ fontWeight: 800, color: "#111111", background: "#F4F4F0", padding: "0.3rem 0.75rem", border: "1.5px solid #111111" }}>
               {String(activeIndex + 1).padStart(2, "0")} / {String(allImages.length).padStart(2, "0")}
             </div>
 
@@ -307,7 +307,7 @@ export default function ProjectGalleryLightbox({ project }) {
                 type="button"
                 onClick={handleZoomIn}
                 className="gallery-nav-btn"
-                style={{ padding: "0.35rem 0.5rem", background: "#222", color: "#fff", borderColor: "#444" }}
+                style={{ padding: "0.4rem 0.6rem", background: "#FFFFFF", color: "#111111", border: "1.5px solid #111111", boxShadow: "2px 2px 0px 0px #111111" }}
                 title="Zoom In (+)"
               >
                 <ZoomIn className="w-4 h-4" />
@@ -317,7 +317,7 @@ export default function ProjectGalleryLightbox({ project }) {
                 type="button"
                 onClick={handleZoomOut}
                 className="gallery-nav-btn"
-                style={{ padding: "0.35rem 0.5rem", background: "#222", color: "#fff", borderColor: "#444" }}
+                style={{ padding: "0.4rem 0.6rem", background: "#FFFFFF", color: "#111111", border: "1.5px solid #111111", boxShadow: "2px 2px 0px 0px #111111" }}
                 title="Zoom Out (-)"
               >
                 <ZoomOut className="w-4 h-4" />
@@ -328,7 +328,7 @@ export default function ProjectGalleryLightbox({ project }) {
                   type="button"
                   onClick={resetZoom}
                   className="gallery-nav-btn"
-                  style={{ padding: "0.35rem 0.5rem", background: "#222", color: "#fff", borderColor: "#444" }}
+                  style={{ padding: "0.4rem 0.6rem", background: "#FFFFFF", color: "#111111", border: "1.5px solid #111111", boxShadow: "2px 2px 0px 0px #111111" }}
                   title="Reset Zoom"
                 >
                   <RotateCcw className="w-4 h-4" />
@@ -339,7 +339,7 @@ export default function ProjectGalleryLightbox({ project }) {
                 type="button"
                 onClick={() => setIsLightboxOpen(false)}
                 className="swiss-button-primary"
-                style={{ padding: "0.35rem 0.65rem", marginLeft: "0.5rem" }}
+                style={{ padding: "0.4rem 0.75rem", marginLeft: "0.5rem" }}
                 title="Close Lightbox (Esc)"
               >
                 <X className="w-4 h-4" />
@@ -366,7 +366,7 @@ export default function ProjectGalleryLightbox({ project }) {
               style={{ position: "absolute", left: "1.5rem", zIndex: 10002, padding: "0.75rem" }}
               aria-label="Previous Slide"
             >
-              <ChevronLeft className="w-6 h-6 text-[#E63946]" />
+              <ChevronLeft className="w-6 h-6 text-[#111111]" />
             </button>
 
             <div
@@ -397,19 +397,19 @@ export default function ProjectGalleryLightbox({ project }) {
               style={{ position: "absolute", right: "1.5rem", zIndex: 10002, padding: "0.75rem" }}
               aria-label="Next Slide"
             >
-              <ChevronRight className="w-6 h-6 text-[#E63946]" />
+              <ChevronRight className="w-6 h-6 text-[#111111]" />
             </button>
           </div>
 
           {/* Lightbox Footer Bar */}
           <div className="lightbox-footer-bar">
-            <span style={{ color: "#E63946", fontWeight: 700, textTransform: "uppercase" }}>
+            <span style={{ color: "#E63946", fontWeight: 800, textTransform: "uppercase" }}>
               {currentImg.title || project.title}
             </span>
-            <span style={{ color: "#9CA3AF" }}>
+            <span style={{ color: "#4B5563", fontWeight: 500 }}>
               Use keyboard arrows ← → to navigate · Esc to close
             </span>
-            <span style={{ fontWeight: 700 }}>
+            <span style={{ fontWeight: 800, color: "#111111", background: "#F4F4F0", padding: "0.2rem 0.6rem", border: "1px solid #111111" }}>
               {zoomScale > 1 ? `${Math.round(zoomScale * 100)}% ZOOM` : "100% FIT"}
             </span>
           </div>

@@ -59,15 +59,12 @@ export default function HeroSection({ onOpenResume }) {
             {/* Developer Badge */}
             <div className="hero-badge-wrap">
                 <span className="badge-dot" />
-                <span>FULL-STACK DEVELOPER</span>
+                <span>Hello There</span>
             </div>
 
             {/* Swiss Heading */}
             <h1 className="hero-title">
               I&apos;M KAMRUL <br />
-              <span className="hero-title-highlight">
-                ISLAM
-              </span>
             </h1>
 
             {/* Subtitle Badge Strip */}
@@ -82,7 +79,8 @@ export default function HeroSection({ onOpenResume }) {
 
             {/* Executive Bio */}
             <p className="hero-bio">
-              Web Developer crafting high-quality digital experiences with Shopify, WordPress, React and modern front-end technologies. Specializes in custom Shopify Liquid code, PageFly, GemPages, WooCommerce, Elementor Pro, and interactive React interfaces backed by clean CSS3 and GSAP animations.
+              From concept to launch, I bring products to life through frontend engineering, rapid prototyping, custom eCommerce development, and marketing automation. My goal is to create seamless digital experiences that solve real problems and help businesses grow.
+
             </p>
 
             {/* Action Buttons & Social Links */}

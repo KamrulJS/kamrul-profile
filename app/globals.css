@@ -508,6 +508,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-badge-wrap {
   margin-bottom: 1rem;
+  font-weight: 400;;
+  font-size: 15px;
+  font-style: italic;
+}
+.hero-badge-wrap {
+  margin-bottom: 1rem;
 }
 
 .badge-dot {
@@ -532,13 +538,13 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 640px) {
   .hero-title {
-    font-size: 3.75rem;
+    font-size: 8.75rem; 
   }
 }
 
 @media (min-width: 1024px) {
   .hero-title {
-    font-size: 4.5rem;
+    font-size: 5.5rem;
   }
 }
 
@@ -3094,7 +3100,7 @@ a.portfolio-card,
 
 @media (min-width: 640px) {
   .hero-title {
-    font-size: 3.75rem;
+    font-size: 4.75rem;
   }
 }
 
