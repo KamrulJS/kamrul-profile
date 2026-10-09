@@ -98,32 +98,32 @@ export default function ProjectLightbox({
         
         {/* Header Toolbar */}
         <div className="lightbox-toolbar">
-          <div className="lightbox-title-area">
-            <span className="swiss-badge-red text-[11px] py-0.5 px-2 font-bold uppercase tracking-wider">
+          <div className="lightbox-header-left">
+            <span className="lightbox-category-badge">
               {project.category}
             </span>
-            <span className="font-extrabold text-[#111111] text-[16px] uppercase tracking-wide">
+            <h3 className="lightbox-project-title">
               {project.title}
-            </span>
+            </h3>
           </div>
 
-          <div className="flex items-center gap-3">
-            <span className="font-mono text-[11px] font-bold text-[#111111] bg-[#F4F4F0] border border-[#111111] px-2.5 py-1 rounded uppercase tracking-wider">
+          <div className="lightbox-header-right">
+            <span className="lightbox-counter-badge">
               IMG {String(activeImgIndex + 1).padStart(2, "0")} / {String(images.length).padStart(2, "0")}
             </span>
 
             <button
               onClick={handleClose}
-              className="w-8 h-8 rounded border border-[#111111] bg-[#111111] text-white hover:bg-[#E63946] hover:border-[#E63946] transition-colors flex items-center justify-center"
+              className="lightbox-close-btn"
               aria-label="Close Lightbox"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4" />
             </button>
           </div>
         </div>
 
         {/* Center Image Stage */}
-        <div className="lightbox-image-stage" style={{ position: "relative" }}>
+        <div className="lightbox-image-stage">
           <Image
             src={currentImage}
             alt={`${project.title} - view ${activeImgIndex + 1}`}
@@ -138,18 +138,18 @@ export default function ProjectLightbox({
             <>
               <button
                 onClick={handlePrev}
-                className="lightbox-nav-arrow left-4"
+                className="lightbox-nav-arrow lightbox-nav-prev"
                 aria-label="Previous Image"
               >
-                <ChevronLeft className="w-7 h-7 text-white" />
+                <ChevronLeft className="w-6 h-6" />
               </button>
 
               <button
                 onClick={handleNext}
-                className="lightbox-nav-arrow right-4"
+                className="lightbox-nav-arrow lightbox-nav-next"
                 aria-label="Next Image"
               >
-                <ChevronRight className="w-7 h-7 text-white" />
+                <ChevronRight className="w-6 h-6" />
               </button>
             </>
           )}
@@ -157,15 +157,15 @@ export default function ProjectLightbox({
 
         {/* Footer Info Strip */}
         <div className="lightbox-footer">
-          <div>
-            <p className="text-[14px] text-[#111111] font-semibold mb-2 leading-relaxed">
+          <div className="lightbox-footer-content">
+            <p className="lightbox-project-desc">
               {project.description}
             </p>
-            <div className="flex flex-wrap gap-1.5">
-              {project.techStack.map((tech, i) => (
+            <div className="lightbox-tags-wrap">
+              {(project.techStack || []).map((tech, i) => (
                 <span
                   key={i}
-                  className="font-mono text-[10.5px] font-bold text-[#111111] bg-[#F4F4F0] border border-[#111111] px-2 py-0.5 rounded"
+                  className="lightbox-tag-pill"
                 >
                   #{tech}
                 </span>
@@ -173,9 +173,17 @@ export default function ProjectLightbox({
             </div>
           </div>
 
-          <div className="text-right flex-shrink-0 ml-6 font-mono text-[11px] font-bold text-[#111111] uppercase tracking-wider space-y-0.5">
-            <div><span className="text-[#E63946]">CLIENT:</span> {project.client}</div>
-            <div><span className="text-[#E63946]">YEAR:</span> {project.year}</div>
+          <div className="lightbox-footer-meta">
+            <div className="lightbox-meta-box">
+              <div className="lightbox-meta-row">
+                <span className="lightbox-meta-label">CLIENT:</span>
+                <span className="lightbox-meta-value">{project.client}</span>
+              </div>
+              <div className="lightbox-meta-row">
+                <span className="lightbox-meta-label">YEAR:</span>
+                <span className="lightbox-meta-value">{project.year}</span>
+              </div>
+            </div>
           </div>
         </div>
 
