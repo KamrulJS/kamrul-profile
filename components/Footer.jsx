@@ -14,8 +14,8 @@ export default function Footer() {
           </div>
           <div>
             <span className="footer-name">KAMRUL ISLAM</span>
-            <span className="footer-sub">Website & App Developer</span>
-          </div>
+            <span className="footer-sub">Application Developer</span>
+          </div>  
         </div>
 
         {/* Center Legal / Copyright */}
