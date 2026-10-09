@@ -11,7 +11,7 @@ export default function SmoothScroll({ children }) {
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 1,
+      wheelMultiplier: 1.4,
       touchMultiplier: 2,
     });
 
