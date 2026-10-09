@@ -54,13 +54,13 @@ export default function MetricsBanner() {
                   </div>
                 </div>
 
-                <div className="metric-tags-flex">
+                {/* <div className="metric-tags-flex">
                   {(metric.tags || []).map((tag, tIdx) => (
                     <span key={tIdx} className="swiss-badge-sm">
                       #{tag}
                     </span>
                   ))}
-                </div>
+                </div> */}
               </div>
             ))
           )}

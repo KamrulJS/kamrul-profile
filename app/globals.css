@@ -507,22 +507,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-badge-wrap {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin-bottom: 1rem;
   font-weight: 400;;
-  font-size: 15px;
-  font-style: italic;
+  font-size: 16px;
+  letter-spacing: 1px; 
+  text-transform: uppercase;
 }
 .hero-badge-wrap {
   margin-bottom: 1rem;
 }
 
 .badge-dot {
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 0.9rem;
+  height: 0.9rem;
   background-color: #E63946;
   border: 1px solid #111111;
   display: inline-block;
-  margin-right: 0.5rem;
+  margin-right: 1rem;
 }
 
 .hero-title {
@@ -753,6 +755,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-wrap: wrap;
   gap: 0.35rem;
   margin-top: 1.25rem;
+  display: none;
 }
 
 .dossier-card {
@@ -3100,7 +3103,7 @@ a.portfolio-card,
 
 @media (min-width: 640px) {
   .hero-title {
-    font-size: 4.75rem;
+    font-size: 6.75rem; 
   }
 }
 
