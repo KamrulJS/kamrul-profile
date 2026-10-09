@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Layout, Code2, Zap, Settings } from "lucide-react";
+import { Layout, Code2, Zap, Settings, ShoppingBag } from "lucide-react";
 import { getServices } from "@/lib/dataService";
 
 const iconMap = {
@@ -9,6 +9,7 @@ const iconMap = {
   Settings: Settings,
   Code2: Code2,
   Zap: Zap,
+  ShoppingBag: ShoppingBag,
 };
 
 export default function ExpertiseSection() {

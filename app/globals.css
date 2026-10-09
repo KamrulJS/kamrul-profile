@@ -1703,8 +1703,8 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 0.5rem;
   font-size: 14.5px;
-  font-family: 'JetBrains Mono', monospace;
-  color: #111111;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #4b4b4b;
 }
 
 .checklist-dot {
