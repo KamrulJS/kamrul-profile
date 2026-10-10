@@ -4,10 +4,12 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { Menu, X, FileText, ArrowUpRight } from "lucide-react";
+import HireMeModal from "./HireMeModal";
 
 export default function Navbar({ onOpenResume }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isHireMeOpen, setIsHireMeOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("overview");
   const mobileDrawerRef = useRef(null);
 
@@ -108,19 +110,20 @@ export default function Navbar({ onOpenResume }) {
 
           {/* Action CTAs */}
           <div className="nav-actions">
-
-            <a
-              href="#contact"
+            <button
+              type="button"
+              onClick={() => setIsHireMeOpen(true)}
               className="swiss-button-primary"
+              aria-label="Open Hire Me platforms modal"
             >
               <span>HIRE ME</span>
               <ArrowUpRight className="icon-sm icon-ml" />
-            </a>
+            </button>
           </div>
 
           {/* Mobile Menu Trigger */}
           <div className="mobile-nav-trigger">
-            <button onClick={onOpenResume} className="icon-btn-box">
+            <button onClick={onOpenResume} className="icon-btn-box" aria-label="Open resume preview">
               <FileText className="icon-sm" />
             </button>
 
@@ -133,6 +136,7 @@ export default function Navbar({ onOpenResume }) {
                 }
               }}
               className="icon-btn-box"
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {mobileMenuOpen ? <X className="icon-md" /> : <Menu className="icon-md" />}
             </button>
@@ -160,6 +164,7 @@ export default function Navbar({ onOpenResume }) {
 
             <div className="mobile-actions-stack">
               <button
+                type="button"
                 onClick={() => closeMobileMenu(onOpenResume)}
                 className="swiss-button-secondary swiss-button-full"
               >
@@ -167,18 +172,24 @@ export default function Navbar({ onOpenResume }) {
                 <span>VIEW FULL CV DOCUMENT</span>
               </button>
 
-              <a
-                href="#contact"
-                onClick={() => closeMobileMenu()}
+              <button
+                type="button"
+                onClick={() => closeMobileMenu(() => setIsHireMeOpen(true))}
                 className="swiss-button-primary swiss-button-full"
               >
-                <span>CONTACT KAMRUL</span>
+                <span>HIRE ME</span>
                 <ArrowUpRight className="icon-sm icon-ml" />
-              </a>
+              </button>
             </div>
           </div>
         </div>
       )}
+
+      {/* Hire Me Platform Modal */}
+      <HireMeModal
+        isOpen={isHireMeOpen}
+        onClose={() => setIsHireMeOpen(false)}
+      />
     </>
   );
 }
