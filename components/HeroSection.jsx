@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ArrowDownRight } from "lucide-react";
+import HeroContactForm from "./HeroContactForm";
 
 const GithubIcon = () => (
   <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
@@ -29,6 +30,7 @@ const InstagramIcon = () => (
 );
 
 export default function HeroSection({ onOpenResume }) {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const leftColRef = useRef(null);
   const rightColRef = useRef(null);
 
@@ -133,13 +135,16 @@ export default function HeroSection({ onOpenResume }) {
               </div>
 
               {/* Right Side: Get In Touch Button */}
-              <a
-                href="#contact"
+              <button
+                type="button"
+                onClick={() => setIsContactFormOpen((prev) => !prev)}
                 className="swiss-button-primary"
+                aria-expanded={isContactFormOpen}
+                aria-controls="hero-contact-panel"
               >
                 <span>GET IN TOUCH</span>
-                <ArrowDownRight className="w-4 h-4 ml-2" />
-              </a>
+                <ArrowDownRight className={`w-4 h-4 ml-2 transition-transform duration-200 ${isContactFormOpen ? "rotate-180" : ""}`} />
+              </button>
             </div>
           </div>
 
@@ -151,6 +156,12 @@ export default function HeroSection({ onOpenResume }) {
           </div>
 
         </div>
+
+        {/* Interactive Hero Contact Form Panel */}
+        <HeroContactForm
+          isOpen={isContactFormOpen}
+          onClose={() => setIsContactFormOpen(false)}
+        />
       </div>
     </section>
   );
