@@ -1,6 +1,7 @@
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://kamrulislam.com"),
@@ -78,6 +79,7 @@ export default function RootLayout({ children }) {
           <CustomCursor />
           {children}
         </SmoothScroll>
+        <SpeedInsights />
       </body>
     </html>
   );
