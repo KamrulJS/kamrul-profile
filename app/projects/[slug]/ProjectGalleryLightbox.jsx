@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import {
   ChevronLeft,
@@ -51,32 +51,37 @@ export default function ProjectGalleryLightbox({ project }) {
 
   const currentImg = allImages[activeIndex] || allImages[0];
 
-  const handlePrev = () => {
-    setActiveIndex((prev) => (prev - 1 + allImages.length) % allImages.length);
-    resetZoom();
-  };
-
-  const handleNext = () => {
-    setActiveIndex((prev) => (prev + 1) % allImages.length);
-    resetZoom();
-  };
-
-  const resetZoom = () => {
+  const resetZoom = useCallback(() => {
     setZoomScale(1);
     setPanPos({ x: 0, y: 0 });
-  };
+  }, []);
 
-  const handleZoomIn = () => {
+  const handlePrev = useCallback(() => {
+    setActiveIndex((prev) => (prev - 1 + allImages.length) % allImages.length);
+    resetZoom();
+  }, [allImages.length, resetZoom]);
+
+  const handleNext = useCallback(() => {
+    setActiveIndex((prev) => (prev + 1) % allImages.length);
+    resetZoom();
+  }, [allImages.length, resetZoom]);
+
+  const handleZoomIn = useCallback(() => {
     setZoomScale((prev) => Math.min(prev + 0.5, 3.5));
-  };
+  }, []);
 
-  const handleZoomOut = () => {
+  const handleZoomOut = useCallback(() => {
     setZoomScale((prev) => {
       const next = Math.max(prev - 0.5, 1);
       if (next === 1) setPanPos({ x: 0, y: 0 });
       return next;
     });
-  };
+  }, []);
+
+  const closeLightbox = useCallback(() => {
+    setIsLightboxOpen(false);
+    resetZoom();
+  }, [resetZoom]);
 
   // Prevent body scrolling when Lightbox is open
   useEffect(() => {
@@ -84,7 +89,6 @@ export default function ProjectGalleryLightbox({ project }) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
-      resetZoom();
     }
     return () => {
       document.body.style.overflow = "";
@@ -96,7 +100,7 @@ export default function ProjectGalleryLightbox({ project }) {
     if (!isLightboxOpen) return;
 
     const handleKeyDown = (e) => {
-      if (e.key === "Escape") setIsLightboxOpen(false);
+      if (e.key === "Escape") closeLightbox();
       if (e.key === "ArrowLeft") handlePrev();
       if (e.key === "ArrowRight") handleNext();
       if (e.key === "+" || e.key === "=") handleZoomIn();
@@ -105,7 +109,7 @@ export default function ProjectGalleryLightbox({ project }) {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isLightboxOpen, activeIndex]);
+  }, [isLightboxOpen, closeLightbox, handlePrev, handleNext, handleZoomIn, handleZoomOut]);
 
   // Pan Mouse Handlers
   const handleMouseDown = (e) => {
@@ -337,7 +341,7 @@ export default function ProjectGalleryLightbox({ project }) {
 
               <button
                 type="button"
-                onClick={() => setIsLightboxOpen(false)}
+                onClick={closeLightbox}
                 className="swiss-button-primary"
                 style={{ padding: "0.4rem 0.75rem", marginLeft: "0.5rem" }}
                 title="Close Lightbox (Esc)"

@@ -57,12 +57,10 @@ export default function HireMeModal({ isOpen, onClose }) {
   const modalRef = useRef(null);
   const isAnimatingRef = useRef(false);
 
-  // Sync visibility with isOpen for smooth entrance/exit
-  useEffect(() => {
-    if (isOpen) {
-      setIsVisible(true);
-    }
-  }, [isOpen]);
+  // Sync visibility with isOpen for smooth entrance/exit without cascading renders
+  if (isOpen && !isVisible) {
+    setIsVisible(true);
+  }
 
   const handleClose = useCallback(() => {
     if (isAnimatingRef.current) return;

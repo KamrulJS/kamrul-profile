@@ -134,7 +134,6 @@ export default async function ProjectDetailPage({ params }) {
                 SECTION 03 — DELIVERED OUTCOMES
               </div>
               <h2 className="section-heading-xl text-2xl md:text-3xl font-extrabold text-[#111111] uppercase flex items-center gap-2.5">
-                <Layers className="w-6 h-6 text-[#E63946]" />
                 <span>PROJECT HIGHLIGHTS & OUTCOMES</span>
               </h2>
             </div>

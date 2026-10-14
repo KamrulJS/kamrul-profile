@@ -49,7 +49,7 @@ export default function ProjectShowcase() {
             SECTION 06 — FEATURED WORK GALLERY
           </div>
           <h2>
-            FEATURED PROJECTS & CASE STUDIES
+            PROJECTS & CASE STUDIES
           </h2>
           <p className="workflow-subtitle mt-1">
             Continuous gallery showcase. Hover over any row to pause movement, or click a project card to launch the interactive full-screen gallery lightbox.

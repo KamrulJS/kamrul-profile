@@ -42,7 +42,7 @@ export default function ExpertiseSection() {
             SECTION 05 — TECHNICAL EXPERTISE
           </div>
           <h2>
-            CORE CAPABILITIES & SPECIALIZATIONS
+            CORE SPECIALIZATIONS
           </h2>
         </div>
 

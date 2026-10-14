@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ArrowDownRight } from "lucide-react";
 import HeroContactForm from "./HeroContactForm";
@@ -151,7 +152,14 @@ export default function HeroSection({ onOpenResume }) {
           {/* Right Column: Avatar Circle */}
           <div ref={rightColRef} className="hero-right-col hero-avatar-wrap">
             <div className="hero-avatar-circle group">
-             <img src="../gum-man.jpg" alt="" />
+             <Image
+               src="/gum-man.jpg"
+               alt="Kamrul Islam"
+               fill
+               priority
+               sizes="(max-width: 640px) 264px, (max-width: 768px) 320px, 448px"
+               className="object-cover"
+             />
             </div>
           </div>
 

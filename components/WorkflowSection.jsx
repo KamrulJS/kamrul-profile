@@ -450,7 +450,7 @@ export default function WorkflowSection() {
             SECTION 04 — PROJECT WORKFLOW
           </div>
           <h2>
-            DEVELOPMENT WORKFLOW & PROCESS
+            DEVELOPMENT WORKFLOW
           </h2>
           <p className="workflow-subtitle">
             A battle-tested 4-step pipeline ensuring zero design compromises, sub-second page speed, and seamless handover.
@@ -571,15 +571,6 @@ export default function WorkflowSection() {
             {/* Right Column: Step Illustration Card */}
             <div>
               <div className="workflow-illustration-card">
-
-                {/* Illustration Header */}
-                <div className="workflow-illustration-header">
-                  <span>{currentStep.illustrationLabel}</span>
-                  <span className="workflow-illustration-status">
-                    <span className="workflow-illustration-dot" />
-                    STEP {currentStep.stepId}
-                  </span>
-                </div>
 
                 {/* Illustration Body */}
                 <div className="workflow-illustration-body">

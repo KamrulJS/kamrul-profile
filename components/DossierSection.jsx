@@ -60,7 +60,7 @@ export default function DossierSection() {
             SECTION 03 — EXECUTIVE SUMMARY
           </div>
           <h2>
-            PROFESSIONAL TECH STACK & TOOLS
+            PROFESSIONAL TECH & TOOLS
           </h2>
         <div className="space-y-1">
             <p className="workflow-subtitle">

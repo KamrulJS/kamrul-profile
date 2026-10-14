@@ -3,6 +3,8 @@ import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 
 export const metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://kamrulislam.com"),
+
   title: "Kamrul Islam — Web Application Developer & eCommerce Expert",
 
   description:

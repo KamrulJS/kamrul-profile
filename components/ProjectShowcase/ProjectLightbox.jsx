@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
@@ -39,7 +39,7 @@ export default function ProjectLightbox({
     }
   }, [project]);
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     if (overlayRef.current && modalBoxRef.current) {
       gsap.to(overlayRef.current, { opacity: 0, duration: 0.2 });
       gsap.to(modalBoxRef.current, {
@@ -53,22 +53,22 @@ export default function ProjectLightbox({
     } else {
       onClose();
     }
-  };
+  }, [onClose]);
 
   const images = project?.images || [];
   const currentImage = images[activeImgIndex] || project?.images[0] || "";
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     if (images.length > 0) {
       setActiveImgIndex((prev) => (prev + 1) % images.length);
     }
-  };
+  }, [images.length]);
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     if (images.length > 0) {
       setActiveImgIndex((prev) => (prev - 1 + images.length) % images.length);
     }
-  };
+  }, [images.length]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -80,7 +80,7 @@ export default function ProjectLightbox({
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [project, activeImgIndex]);
+  }, [project, handleClose, handleNext, handlePrev]);
 
   if (!project) return null;
 

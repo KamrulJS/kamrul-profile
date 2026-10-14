@@ -22,7 +22,6 @@ export default function ProjectCardV1({ project, index = 0 }) {
   const titleRef = useRef(null);
   const techRef = useRef(null);
   const arrowRef = useRef(null);
-  const ctxRef = useRef(null);
 
   useEffect(() => {
     // Initial GSAP setup
@@ -31,10 +30,6 @@ export default function ProjectCardV1({ project, index = 0 }) {
     gsap.set(techRef.current, { opacity: 0, y: 12 });
     gsap.set(arrowRef.current, { x: 0, y: 0, scale: 1 });
     gsap.set(imageRef.current, { scale: 1, filter: "brightness(100%)" });
-
-    return () => {
-      if (ctxRef.current) ctxRef.current.revert();
-    };
   }, []);
 
   const handleMouseEnter = () => {

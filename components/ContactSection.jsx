@@ -86,8 +86,11 @@ export default function ContactSection() {
             SECTION 07 — INITIATE CONTACT
           </div>
           <h2>
-            HAVE A PROJECT IN MIND? LET&apos;S BUILD SOMETHING MEANINGFUL.
+            HAVE A PROJECT IN MIND?
           </h2>
+          <h3>
+            LET&apos;S BUILD SOMETHING MEANINGFUL.
+          </h3>
         </div>
 
         <div className="contact-grid">

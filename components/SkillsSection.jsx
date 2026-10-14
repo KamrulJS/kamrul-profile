@@ -4,54 +4,54 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Wrench, CheckCircle2, Sparkles } from "lucide-react";
 
+const PROFICIENCY_METERS = [
+  { skill: "Shopify & Custom Liquid Code", level: 95 },
+  { skill: "PageFly & GemPages Page Builders", level: 94 },
+  { skill: "WordPress & Elementor Pro Builds", level: 96 },
+  { skill: "WooCommerce & E-Commerce Setups", level: 92 },
+  { skill: "HTML5, CSS3 & TailwindCSS", level: 95 },
+  { skill: "JavaScript (ES6+) & React.js", level: 90 },
+  { skill: "GSAP Motion & Animations", level: 88 },
+];
+
+const SKILL_GROUPS = [
+  {
+    category: "01. FRONTEND",
+    skills: ["JavaScript", "React", "Tailwind CSS", "Bootstrap"],
+  },
+  {
+    category: "02. BACKEND",
+    skills: ["Node.js", "Django", "Express.js", "REST API"],
+  },
+  {
+    category: "03. DATABASE",
+    skills: ["MySQL", "MongoDB", "Firebase"],
+  },
+  {
+    category: "04. CMS & PLATFORMS",
+    skills: ["WordPress", "Shopify", "WooCommerce", "Squarespace", "Wix"],
+  },
+  {
+    category: "05. E-COMMERCE & MARKETING",
+    skills: [
+      "Klaviyo",
+      "Stripe",
+      "PayPal",
+      "Google Analytics",
+      "Meta Ads",
+      "Mailchimp",
+    ],
+  },
+];
+
 export default function SkillsSection() {
   const metersRef = useRef(null);
-
-  const proficiencyMeters = [
-    { skill: "Shopify & Custom Liquid Code", level: 95 },
-    { skill: "PageFly & GemPages Page Builders", level: 94 },
-    { skill: "WordPress & Elementor Pro Builds", level: 96 },
-    { skill: "WooCommerce & E-Commerce Setups", level: 92 },
-    { skill: "HTML5, CSS3 & TailwindCSS", level: 95 },
-    { skill: "JavaScript (ES6+) & React.js", level: 90 },
-    { skill: "GSAP Motion & Animations", level: 88 },
-  ];
-
-  const skillGroups = [
-    {
-      category: "01. FRONTEND",
-      skills: ["JavaScript", "React", "Tailwind CSS", "Bootstrap"],
-    },
-    {
-      category: "02. BACKEND",
-      skills: ["Node.js", "Django", "Express.js", "REST API"],
-    },
-    {
-      category: "03. DATABASE",
-      skills: ["MySQL", "MongoDB", "Firebase"],
-    },
-    {
-      category: "04. CMS & PLATFORMS",
-      skills: ["WordPress", "Shopify", "WooCommerce", "Squarespace", "Wix"],
-    },
-    {
-      category: "05. E-COMMERCE & MARKETING",
-      skills: [
-        "Klaviyo",
-        "Stripe",
-        "PayPal",
-        "Google Analytics",
-        "Meta Ads",
-        "Mailchimp",
-      ],
-    },
-  ];
 
   useEffect(() => {
     if (metersRef.current) {
       const fills = metersRef.current.querySelectorAll(".skill-meter-fill");
       fills.forEach((fill, idx) => {
-        const targetLevel = proficiencyMeters[idx]?.level || 80;
+        const targetLevel = PROFICIENCY_METERS[idx]?.level || 80;
         gsap.fromTo(
           fill,
           { width: "0%" },
@@ -86,7 +86,7 @@ export default function SkillsSection() {
               </h3>
 
               <div ref={metersRef} className="meters-stack">
-                {proficiencyMeters.map((item, idx) => (
+                {PROFICIENCY_METERS.map((item, idx) => (
                   <div key={idx} className="meter-item">
                     <div className="meter-label-row">
                       <span className="text-[#111111]">{item.skill}</span>
@@ -114,7 +114,7 @@ export default function SkillsSection() {
 
               {/* Skill Groups Stack */}
               <div>
-                {skillGroups.map((group) => (
+                {SKILL_GROUPS.map((group) => (
                   <div key={group.category} className="skill-group-box">
                     <div className="skill-group-category">
                       <span className="bullet-dot" />

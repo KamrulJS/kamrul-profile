@@ -6,6 +6,16 @@ import gsap from "gsap";
 import { Menu, X, FileText, ArrowUpRight } from "lucide-react";
 import HireMeModal from "./HireMeModal";
 
+const NAV_LINKS = [
+  { name: "OVERVIEW", href: "/#overview" },
+  { name: "PROJECTS", href: "/#projects" },
+  { name: "SUMMARY", href: "/#summary" },
+  { name: "WORKFLOW", href: "/#workflow" },
+  { name: "SKILLS", href: "/#skills" },
+  { name: "SHOWCASE", href: "/#showcase" },
+  { name: "CONTACT", href: "/#contact" }, 
+];
+
 export default function Navbar({ onOpenResume }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -13,21 +23,11 @@ export default function Navbar({ onOpenResume }) {
   const [activeSection, setActiveSection] = useState("overview");
   const mobileDrawerRef = useRef(null);
 
-  const navLinks = [
-    { name: "OVERVIEW", href: "/#overview" },
-    { name: "PROJECTS", href: "/#projects" },
-    { name: "SUMMARY", href: "/#summary" },
-    { name: "WORKFLOW", href: "/#workflow" },
-    { name: "SKILLS", href: "/#skills" },
-    { name: "SHOWCASE", href: "/#showcase" },
-    { name: "CONTACT", href: "/#contact" }, 
-  ];
-
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sections = navLinks.map((link) => link.href.substring(1));
+      const sections = NAV_LINKS.map((link) => link.href.substring(1));
       const scrollPosition = window.scrollY + 180;
 
       for (const sectionId of sections) {
@@ -94,7 +94,7 @@ export default function Navbar({ onOpenResume }) {
 
           {/* Desktop Nav Links */}
           <nav className="desktop-nav">
-            {navLinks.map((link) => {
+            {NAV_LINKS.map((link) => {
               const isActive = activeSection === link.href.substring(1);
               return (
                 <a
@@ -123,8 +123,17 @@ export default function Navbar({ onOpenResume }) {
 
           {/* Mobile Menu Trigger */}
           <div className="mobile-nav-trigger">
-            <button onClick={onOpenResume} className="icon-btn-box" aria-label="Open resume preview">
-              <FileText className="icon-sm" />
+            <button
+              type="button"
+              onClick={() => {
+                if (mobileMenuOpen) closeMobileMenu();
+                setIsHireMeOpen(true);
+              }}
+              className="swiss-button-primary mobile-header-hire-btn"
+              aria-label="Open Hire Me platforms modal"
+            >
+              <span>HIRE ME</span>
+              <ArrowUpRight className="icon-sm icon-ml" />
             </button>
 
             <button
@@ -150,7 +159,7 @@ export default function Navbar({ onOpenResume }) {
           <div className="swiss-card mobile-menu-card">
 
             <div className="menu-grid">
-              {navLinks.map((link) => (
+              {NAV_LINKS.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
@@ -170,15 +179,6 @@ export default function Navbar({ onOpenResume }) {
               >
                 <FileText className="icon-sm icon-red icon-mr" />
                 <span>VIEW FULL CV DOCUMENT</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => closeMobileMenu(() => setIsHireMeOpen(true))}
-                className="swiss-button-primary swiss-button-full"
-              >
-                <span>HIRE ME</span>
-                <ArrowUpRight className="icon-sm icon-ml" />
               </button>
             </div>
           </div>

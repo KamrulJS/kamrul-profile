@@ -32,12 +32,10 @@ export default function HeroContactForm({ isOpen, onClose }) {
   const isAnimatingRef = useRef(false);
   const nameInputRef = useRef(null);
 
-  // Sync open state with visibility and GSAP reveal / exit animations
-  useEffect(() => {
-    if (isOpen) {
-      setIsVisible(true);
-    }
-  }, [isOpen]);
+  // Sync open state with visibility without triggering cascading renders in effect
+  if (isOpen && !isVisible) {
+    setIsVisible(true);
+  }
 
   useEffect(() => {
     if (!wrapperRef.current) return;
